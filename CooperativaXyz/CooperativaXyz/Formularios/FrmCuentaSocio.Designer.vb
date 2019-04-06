@@ -215,7 +215,7 @@ Partial Class FrmCuentaSocio
         'BtnSalir
         '
         Me.BtnSalir.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.BtnSalir.Location = New System.Drawing.Point(646, 28)
+        Me.BtnSalir.Location = New System.Drawing.Point(655, 28)
         Me.BtnSalir.Name = "BtnSalir"
         Me.BtnSalir.Size = New System.Drawing.Size(75, 50)
         Me.BtnSalir.TabIndex = 4
