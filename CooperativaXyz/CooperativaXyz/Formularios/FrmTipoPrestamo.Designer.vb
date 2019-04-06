@@ -22,7 +22,8 @@ Partial Class FrmTipoPrestamo
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TbNacionalidades = New System.Windows.Forms.TabControl()
+        Me.components = New System.ComponentModel.Container()
+        Me.TbTipoPrestamo = New System.Windows.Forms.TabControl()
         Me.TbDatosTipoPrestamo = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnSalir = New System.Windows.Forms.Button()
@@ -41,25 +42,32 @@ Partial Class FrmTipoPrestamo
         Me.LsvTipoPrestamo = New System.Windows.Forms.ListView()
         Me.CHCodTipoPrestamo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.CHTipoPrestamo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.CmsOpciones = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TbNacionalidades.SuspendLayout()
+        Me.EpMensaje = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.TbTipoPrestamo.SuspendLayout()
         Me.TbDatosTipoPrestamo.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TbListadoTipoPrestamo.SuspendLayout()
+        Me.CmsOpciones.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        CType(Me.EpMensaje, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TbNacionalidades
+        'TbTipoPrestamo
         '
-        Me.TbNacionalidades.Controls.Add(Me.TbDatosTipoPrestamo)
-        Me.TbNacionalidades.Controls.Add(Me.TbListadoTipoPrestamo)
-        Me.TbNacionalidades.Location = New System.Drawing.Point(27, 108)
-        Me.TbNacionalidades.Name = "TbNacionalidades"
-        Me.TbNacionalidades.SelectedIndex = 0
-        Me.TbNacionalidades.Size = New System.Drawing.Size(803, 341)
-        Me.TbNacionalidades.TabIndex = 13
+        Me.TbTipoPrestamo.Controls.Add(Me.TbDatosTipoPrestamo)
+        Me.TbTipoPrestamo.Controls.Add(Me.TbListadoTipoPrestamo)
+        Me.TbTipoPrestamo.Location = New System.Drawing.Point(0, 108)
+        Me.TbTipoPrestamo.Name = "TbTipoPrestamo"
+        Me.TbTipoPrestamo.SelectedIndex = 0
+        Me.TbTipoPrestamo.Size = New System.Drawing.Size(784, 341)
+        Me.TbTipoPrestamo.TabIndex = 13
         '
         'TbDatosTipoPrestamo
         '
@@ -68,9 +76,9 @@ Partial Class FrmTipoPrestamo
         Me.TbDatosTipoPrestamo.Location = New System.Drawing.Point(4, 22)
         Me.TbDatosTipoPrestamo.Name = "TbDatosTipoPrestamo"
         Me.TbDatosTipoPrestamo.Padding = New System.Windows.Forms.Padding(3)
-        Me.TbDatosTipoPrestamo.Size = New System.Drawing.Size(795, 315)
+        Me.TbDatosTipoPrestamo.Size = New System.Drawing.Size(776, 315)
         Me.TbDatosTipoPrestamo.TabIndex = 0
-        Me.TbDatosTipoPrestamo.Text = "Datos Tipo Prestamo"
+        Me.TbDatosTipoPrestamo.Text = "Tipo Prestamo"
         Me.TbDatosTipoPrestamo.UseVisualStyleBackColor = True
         '
         'GroupBox1
@@ -82,7 +90,7 @@ Partial Class FrmTipoPrestamo
         Me.GroupBox1.Controls.Add(Me.BtnNuevo)
         Me.GroupBox1.Location = New System.Drawing.Point(6, 164)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(785, 110)
+        Me.GroupBox1.Size = New System.Drawing.Size(774, 110)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         '
@@ -93,6 +101,7 @@ Partial Class FrmTipoPrestamo
         Me.BtnSalir.Name = "BtnSalir"
         Me.BtnSalir.Size = New System.Drawing.Size(75, 50)
         Me.BtnSalir.TabIndex = 4
+        Me.ToolTip1.SetToolTip(Me.BtnSalir, "Salir")
         Me.BtnSalir.UseVisualStyleBackColor = False
         '
         'BtnCancelar
@@ -102,15 +111,17 @@ Partial Class FrmTipoPrestamo
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(75, 50)
         Me.BtnCancelar.TabIndex = 3
+        Me.ToolTip1.SetToolTip(Me.BtnCancelar, "Cancelar")
         Me.BtnCancelar.UseVisualStyleBackColor = False
         '
         'BtnModificar
         '
         Me.BtnModificar.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.BtnModificar.Location = New System.Drawing.Point(346, 28)
+        Me.BtnModificar.Location = New System.Drawing.Point(338, 28)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(75, 50)
         Me.BtnModificar.TabIndex = 2
+        Me.ToolTip1.SetToolTip(Me.BtnModificar, "Modificar")
         Me.BtnModificar.UseVisualStyleBackColor = False
         '
         'BtnGuardar
@@ -120,6 +131,7 @@ Partial Class FrmTipoPrestamo
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(75, 50)
         Me.BtnGuardar.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.BtnGuardar, "Guardar")
         Me.BtnGuardar.UseVisualStyleBackColor = False
         '
         'BtnNuevo
@@ -129,6 +141,7 @@ Partial Class FrmTipoPrestamo
         Me.BtnNuevo.Name = "BtnNuevo"
         Me.BtnNuevo.Size = New System.Drawing.Size(75, 50)
         Me.BtnNuevo.TabIndex = 0
+        Me.ToolTip1.SetToolTip(Me.BtnNuevo, "Nuevo")
         Me.BtnNuevo.UseVisualStyleBackColor = False
         '
         'Panel2
@@ -168,7 +181,7 @@ Partial Class FrmTipoPrestamo
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(155, 23)
         Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Tipo Prestamo"
+        Me.Label2.Text = "Tipo Préstamo"
         '
         'Label1
         '
@@ -179,7 +192,7 @@ Partial Class FrmTipoPrestamo
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(232, 23)
         Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Código Tipo Prestamo"
+        Me.Label1.Text = "Código Tipo Préstamo"
         '
         'TbListadoTipoPrestamo
         '
@@ -189,14 +202,14 @@ Partial Class FrmTipoPrestamo
         Me.TbListadoTipoPrestamo.Location = New System.Drawing.Point(4, 22)
         Me.TbListadoTipoPrestamo.Name = "TbListadoTipoPrestamo"
         Me.TbListadoTipoPrestamo.Padding = New System.Windows.Forms.Padding(3)
-        Me.TbListadoTipoPrestamo.Size = New System.Drawing.Size(795, 315)
+        Me.TbListadoTipoPrestamo.Size = New System.Drawing.Size(776, 315)
         Me.TbListadoTipoPrestamo.TabIndex = 1
         Me.TbListadoTipoPrestamo.Text = "Listado"
         Me.TbListadoTipoPrestamo.UseVisualStyleBackColor = True
         '
         'TxtBuscarTipoPrestamo
         '
-        Me.TxtBuscarTipoPrestamo.Location = New System.Drawing.Point(289, 46)
+        Me.TxtBuscarTipoPrestamo.Location = New System.Drawing.Point(275, 49)
         Me.TxtBuscarTipoPrestamo.Name = "TxtBuscarTipoPrestamo"
         Me.TxtBuscarTipoPrestamo.Size = New System.Drawing.Size(272, 20)
         Me.TxtBuscarTipoPrestamo.TabIndex = 2
@@ -207,38 +220,58 @@ Partial Class FrmTipoPrestamo
         Me.Label4.Font = New System.Drawing.Font("Lucida Bright", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(185, 51)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(48, 15)
+        Me.Label4.Size = New System.Drawing.Size(51, 15)
         Me.Label4.TabIndex = 1
-        Me.Label4.Text = "Buscar"
+        Me.Label4.Text = "Buscar:"
         '
         'LsvTipoPrestamo
         '
         Me.LsvTipoPrestamo.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.CHCodTipoPrestamo, Me.CHTipoPrestamo})
+        Me.LsvTipoPrestamo.ContextMenuStrip = Me.CmsOpciones
+        Me.LsvTipoPrestamo.FullRowSelect = True
         Me.LsvTipoPrestamo.GridLines = True
-        Me.LsvTipoPrestamo.Location = New System.Drawing.Point(176, 104)
+        Me.LsvTipoPrestamo.Location = New System.Drawing.Point(189, 102)
         Me.LsvTipoPrestamo.Name = "LsvTipoPrestamo"
-        Me.LsvTipoPrestamo.Size = New System.Drawing.Size(464, 188)
+        Me.LsvTipoPrestamo.Size = New System.Drawing.Size(372, 188)
         Me.LsvTipoPrestamo.TabIndex = 0
         Me.LsvTipoPrestamo.UseCompatibleStateImageBehavior = False
         Me.LsvTipoPrestamo.View = System.Windows.Forms.View.Details
         '
         'CHCodTipoPrestamo
         '
-        Me.CHCodTipoPrestamo.Text = "Código Tipo Prestamo"
+        Me.CHCodTipoPrestamo.Text = "Código Tipo Préstamo"
         Me.CHCodTipoPrestamo.Width = 150
         '
         'CHTipoPrestamo
         '
-        Me.CHTipoPrestamo.Text = "Tipo Prestamo"
-        Me.CHTipoPrestamo.Width = 150
+        Me.CHTipoPrestamo.Text = "Tipo Préstamo"
+        Me.CHTipoPrestamo.Width = 200
+        '
+        'CmsOpciones
+        '
+        Me.CmsOpciones.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem1})
+        Me.CmsOpciones.Name = "ContextMenuStrip1"
+        Me.CmsOpciones.Size = New System.Drawing.Size(118, 48)
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem1
+        '
+        Me.EliminarToolStripMenuItem1.Name = "EliminarToolStripMenuItem1"
+        Me.EliminarToolStripMenuItem1.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem1.Text = "Eliminar"
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.DarkSlateGray
         Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Location = New System.Drawing.Point(27, 2)
+        Me.Panel1.Location = New System.Drawing.Point(0, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(803, 100)
+        Me.Panel1.Size = New System.Drawing.Size(784, 100)
         Me.Panel1.TabIndex = 12
         '
         'Label3
@@ -246,35 +279,41 @@ Partial Class FrmTipoPrestamo
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Lucida Bright", 26.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.MintCream
-        Me.Label3.Location = New System.Drawing.Point(214, 28)
+        Me.Label3.Location = New System.Drawing.Point(259, 29)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(263, 40)
+        Me.Label3.Size = New System.Drawing.Size(274, 40)
         Me.Label3.TabIndex = 7
-        Me.Label3.Text = "TipoPrestamo"
+        Me.Label3.Text = "Tipo Préstamo"
+        '
+        'EpMensaje
+        '
+        Me.EpMensaje.ContainerControl = Me
         '
         'FrmTipoPrestamo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(875, 450)
-        Me.Controls.Add(Me.TbNacionalidades)
+        Me.ClientSize = New System.Drawing.Size(784, 450)
+        Me.Controls.Add(Me.TbTipoPrestamo)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FrmTipoPrestamo"
         Me.Text = "FrmTipoPrestamo"
-        Me.TbNacionalidades.ResumeLayout(False)
+        Me.TbTipoPrestamo.ResumeLayout(False)
         Me.TbDatosTipoPrestamo.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.TbListadoTipoPrestamo.ResumeLayout(False)
         Me.TbListadoTipoPrestamo.PerformLayout()
+        Me.CmsOpciones.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.EpMensaje, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents TbNacionalidades As TabControl
+    Friend WithEvents TbTipoPrestamo As TabControl
     Friend WithEvents TbDatosTipoPrestamo As TabPage
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents BtnSalir As Button
@@ -295,4 +334,9 @@ Partial Class FrmTipoPrestamo
     Friend WithEvents CHTipoPrestamo As ColumnHeader
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label3 As Label
+    Friend WithEvents EpMensaje As ErrorProvider
+    Friend WithEvents CmsOpciones As ContextMenuStrip
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ToolTip1 As ToolTip
 End Class
