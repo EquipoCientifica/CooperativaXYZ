@@ -55,20 +55,22 @@ Partial Class FrmNacionalidad
         '
         Me.TbNacionalidades.Controls.Add(Me.TbDatosNacionalidad)
         Me.TbNacionalidades.Controls.Add(Me.TbListadoNacionalidad)
-        Me.TbNacionalidades.Location = New System.Drawing.Point(-1, 108)
+        Me.TbNacionalidades.Location = New System.Drawing.Point(-1, 133)
+        Me.TbNacionalidades.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TbNacionalidades.Name = "TbNacionalidades"
         Me.TbNacionalidades.SelectedIndex = 0
-        Me.TbNacionalidades.Size = New System.Drawing.Size(803, 341)
+        Me.TbNacionalidades.Size = New System.Drawing.Size(1071, 420)
         Me.TbNacionalidades.TabIndex = 11
         '
         'TbDatosNacionalidad
         '
         Me.TbDatosNacionalidad.Controls.Add(Me.GroupBox1)
         Me.TbDatosNacionalidad.Controls.Add(Me.Panel2)
-        Me.TbDatosNacionalidad.Location = New System.Drawing.Point(4, 22)
+        Me.TbDatosNacionalidad.Location = New System.Drawing.Point(4, 25)
+        Me.TbDatosNacionalidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TbDatosNacionalidad.Name = "TbDatosNacionalidad"
-        Me.TbDatosNacionalidad.Padding = New System.Windows.Forms.Padding(3)
-        Me.TbDatosNacionalidad.Size = New System.Drawing.Size(795, 315)
+        Me.TbDatosNacionalidad.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TbDatosNacionalidad.Size = New System.Drawing.Size(1063, 391)
         Me.TbDatosNacionalidad.TabIndex = 0
         Me.TbDatosNacionalidad.Text = "Datos Nacionalidad"
         Me.TbDatosNacionalidad.UseVisualStyleBackColor = True
@@ -80,54 +82,61 @@ Partial Class FrmNacionalidad
         Me.GroupBox1.Controls.Add(Me.BtnModificar)
         Me.GroupBox1.Controls.Add(Me.BtnGuardar)
         Me.GroupBox1.Controls.Add(Me.BtnNuevo)
-        Me.GroupBox1.Location = New System.Drawing.Point(6, 164)
+        Me.GroupBox1.Location = New System.Drawing.Point(8, 202)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(785, 110)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Size = New System.Drawing.Size(1047, 135)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         '
         'BtnSalir
         '
         Me.BtnSalir.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.BtnSalir.Location = New System.Drawing.Point(646, 28)
+        Me.BtnSalir.Location = New System.Drawing.Point(861, 34)
+        Me.BtnSalir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnSalir.Name = "BtnSalir"
-        Me.BtnSalir.Size = New System.Drawing.Size(75, 50)
+        Me.BtnSalir.Size = New System.Drawing.Size(100, 62)
         Me.BtnSalir.TabIndex = 4
         Me.BtnSalir.UseVisualStyleBackColor = False
         '
         'BtnCancelar
         '
         Me.BtnCancelar.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.BtnCancelar.Location = New System.Drawing.Point(495, 28)
+        Me.BtnCancelar.Location = New System.Drawing.Point(660, 34)
+        Me.BtnCancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnCancelar.Name = "BtnCancelar"
-        Me.BtnCancelar.Size = New System.Drawing.Size(75, 50)
+        Me.BtnCancelar.Size = New System.Drawing.Size(100, 62)
         Me.BtnCancelar.TabIndex = 3
         Me.BtnCancelar.UseVisualStyleBackColor = False
         '
         'BtnModificar
         '
         Me.BtnModificar.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.BtnModificar.Location = New System.Drawing.Point(346, 28)
+        Me.BtnModificar.Location = New System.Drawing.Point(461, 34)
+        Me.BtnModificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnModificar.Name = "BtnModificar"
-        Me.BtnModificar.Size = New System.Drawing.Size(75, 50)
+        Me.BtnModificar.Size = New System.Drawing.Size(100, 62)
         Me.BtnModificar.TabIndex = 2
         Me.BtnModificar.UseVisualStyleBackColor = False
         '
         'BtnGuardar
         '
         Me.BtnGuardar.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.BtnGuardar.Location = New System.Drawing.Point(179, 28)
+        Me.BtnGuardar.Location = New System.Drawing.Point(239, 34)
+        Me.BtnGuardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnGuardar.Name = "BtnGuardar"
-        Me.BtnGuardar.Size = New System.Drawing.Size(75, 50)
+        Me.BtnGuardar.Size = New System.Drawing.Size(100, 62)
         Me.BtnGuardar.TabIndex = 1
         Me.BtnGuardar.UseVisualStyleBackColor = False
         '
         'BtnNuevo
         '
         Me.BtnNuevo.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.BtnNuevo.Location = New System.Drawing.Point(26, 28)
+        Me.BtnNuevo.Location = New System.Drawing.Point(35, 34)
+        Me.BtnNuevo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnNuevo.Name = "BtnNuevo"
-        Me.BtnNuevo.Size = New System.Drawing.Size(75, 50)
+        Me.BtnNuevo.Size = New System.Drawing.Size(100, 62)
         Me.BtnNuevo.TabIndex = 0
         Me.BtnNuevo.UseVisualStyleBackColor = False
         '
@@ -138,25 +147,28 @@ Partial Class FrmNacionalidad
         Me.Panel2.Controls.Add(Me.TxtCodNacionalidad)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Location = New System.Drawing.Point(3, 26)
+        Me.Panel2.Location = New System.Drawing.Point(4, 32)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(789, 122)
+        Me.Panel2.Size = New System.Drawing.Size(1052, 150)
         Me.Panel2.TabIndex = 10
         '
         'TxtNacionalidad
         '
-        Me.TxtNacionalidad.Location = New System.Drawing.Point(372, 69)
+        Me.TxtNacionalidad.Location = New System.Drawing.Point(496, 85)
+        Me.TxtNacionalidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TxtNacionalidad.Multiline = True
         Me.TxtNacionalidad.Name = "TxtNacionalidad"
-        Me.TxtNacionalidad.Size = New System.Drawing.Size(189, 33)
+        Me.TxtNacionalidad.Size = New System.Drawing.Size(251, 40)
         Me.TxtNacionalidad.TabIndex = 6
         '
         'TxtCodNacionalidad
         '
-        Me.TxtCodNacionalidad.Location = New System.Drawing.Point(372, 22)
+        Me.TxtCodNacionalidad.Location = New System.Drawing.Point(496, 27)
+        Me.TxtCodNacionalidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TxtCodNacionalidad.Multiline = True
         Me.TxtCodNacionalidad.Name = "TxtCodNacionalidad"
-        Me.TxtCodNacionalidad.Size = New System.Drawing.Size(189, 33)
+        Me.TxtCodNacionalidad.Size = New System.Drawing.Size(251, 40)
         Me.TxtCodNacionalidad.TabIndex = 5
         '
         'Label2
@@ -164,9 +176,10 @@ Partial Class FrmNacionalidad
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Lucida Bright", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.DarkSlateGray
-        Me.Label2.Location = New System.Drawing.Point(205, 69)
+        Me.Label2.Location = New System.Drawing.Point(273, 85)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(141, 23)
+        Me.Label2.Size = New System.Drawing.Size(188, 32)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Nacionalidad"
         '
@@ -175,9 +188,10 @@ Partial Class FrmNacionalidad
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Lucida Bright", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.DarkSlateGray
-        Me.Label1.Location = New System.Drawing.Point(128, 32)
+        Me.Label1.Location = New System.Drawing.Point(171, 39)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(218, 23)
+        Me.Label1.Size = New System.Drawing.Size(289, 32)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Código Nacionalidad"
         '
@@ -186,28 +200,31 @@ Partial Class FrmNacionalidad
         Me.TbListadoNacionalidad.Controls.Add(Me.TxtBuscarNacionalidades)
         Me.TbListadoNacionalidad.Controls.Add(Me.Label4)
         Me.TbListadoNacionalidad.Controls.Add(Me.LsvNacionalidades)
-        Me.TbListadoNacionalidad.Location = New System.Drawing.Point(4, 22)
+        Me.TbListadoNacionalidad.Location = New System.Drawing.Point(4, 25)
+        Me.TbListadoNacionalidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TbListadoNacionalidad.Name = "TbListadoNacionalidad"
-        Me.TbListadoNacionalidad.Padding = New System.Windows.Forms.Padding(3)
-        Me.TbListadoNacionalidad.Size = New System.Drawing.Size(795, 315)
+        Me.TbListadoNacionalidad.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TbListadoNacionalidad.Size = New System.Drawing.Size(1063, 391)
         Me.TbListadoNacionalidad.TabIndex = 1
         Me.TbListadoNacionalidad.Text = "Listado"
         Me.TbListadoNacionalidad.UseVisualStyleBackColor = True
         '
         'TxtBuscarNacionalidades
         '
-        Me.TxtBuscarNacionalidades.Location = New System.Drawing.Point(289, 46)
+        Me.TxtBuscarNacionalidades.Location = New System.Drawing.Point(385, 57)
+        Me.TxtBuscarNacionalidades.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TxtBuscarNacionalidades.Name = "TxtBuscarNacionalidades"
-        Me.TxtBuscarNacionalidades.Size = New System.Drawing.Size(272, 20)
+        Me.TxtBuscarNacionalidades.Size = New System.Drawing.Size(361, 22)
         Me.TxtBuscarNacionalidades.TabIndex = 2
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Lucida Bright", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(185, 51)
+        Me.Label4.Location = New System.Drawing.Point(247, 63)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(48, 15)
+        Me.Label4.Size = New System.Drawing.Size(64, 19)
         Me.Label4.TabIndex = 1
         Me.Label4.Text = "Buscar"
         '
@@ -215,9 +232,10 @@ Partial Class FrmNacionalidad
         '
         Me.LsvNacionalidades.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.CHCodNacionalidad, Me.CHNacionalidad})
         Me.LsvNacionalidades.GridLines = True
-        Me.LsvNacionalidades.Location = New System.Drawing.Point(176, 104)
+        Me.LsvNacionalidades.Location = New System.Drawing.Point(235, 128)
+        Me.LsvNacionalidades.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LsvNacionalidades.Name = "LsvNacionalidades"
-        Me.LsvNacionalidades.Size = New System.Drawing.Size(464, 188)
+        Me.LsvNacionalidades.Size = New System.Drawing.Size(617, 230)
         Me.LsvNacionalidades.TabIndex = 0
         Me.LsvNacionalidades.UseCompatibleStateImageBehavior = False
         Me.LsvNacionalidades.View = System.Windows.Forms.View.Details
@@ -237,8 +255,9 @@ Partial Class FrmNacionalidad
         Me.Panel1.BackColor = System.Drawing.Color.DarkSlateGray
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Location = New System.Drawing.Point(-1, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(803, 100)
+        Me.Panel1.Size = New System.Drawing.Size(1071, 123)
         Me.Panel1.TabIndex = 10
         '
         'Label3
@@ -246,19 +265,21 @@ Partial Class FrmNacionalidad
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Lucida Bright", 26.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.MintCream
-        Me.Label3.Location = New System.Drawing.Point(214, 28)
+        Me.Label3.Location = New System.Drawing.Point(362, 34)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(252, 40)
+        Me.Label3.Size = New System.Drawing.Size(317, 51)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Nacionalidad"
         '
         'FrmNacionalidad
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1067, 554)
         Me.Controls.Add(Me.TbNacionalidades)
         Me.Controls.Add(Me.Panel1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "FrmNacionalidad"
         Me.Text = "FrmNacionalidad"
         Me.TbNacionalidades.ResumeLayout(False)
