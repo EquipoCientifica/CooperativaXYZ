@@ -73,65 +73,65 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="Formularios\Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
+    <Compile Include="Formularios\Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCuentaSocio.Designer.vb">
+    <Compile Include="Formularios\FrmCuentaSocio.Designer.vb">
       <DependentUpon>FrmCuentaSocio.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmCuentaSocio.vb">
+    <Compile Include="Formularios\FrmCuentaSocio.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmFinalidadPrestamo.Designer.vb">
+    <Compile Include="Formularios\FrmFinalidadPrestamo.Designer.vb">
       <DependentUpon>FrmFinalidadPrestamo.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmFinalidadPrestamo.vb">
+    <Compile Include="Formularios\FrmFinalidadPrestamo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmLugarTrabajo.Designer.vb">
+    <Compile Include="Formularios\FrmLugarTrabajo.Designer.vb">
       <DependentUpon>FrmLugarTrabajo.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmLugarTrabajo.vb">
+    <Compile Include="Formularios\FrmLugarTrabajo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNacionalidad.Designer.vb">
+    <Compile Include="Formularios\FrmNacionalidad.Designer.vb">
       <DependentUpon>FrmNacionalidad.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmNacionalidad.vb">
+    <Compile Include="Formularios\FrmNacionalidad.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmOficialSocio.Designer.vb">
+    <Compile Include="Formularios\FrmOficialSocio.Designer.vb">
       <DependentUpon>FrmOficialSocio.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmOficialSocio.vb">
+    <Compile Include="Formularios\FrmOficialSocio.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSocio.Designer.vb">
+    <Compile Include="Formularios\FrmSocio.Designer.vb">
       <DependentUpon>FrmSocio.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmSocio.vb">
+    <Compile Include="Formularios\FrmSocio.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSolicitudPrestamo.Designer.vb">
+    <Compile Include="Formularios\FrmSolicitudPrestamo.Designer.vb">
       <DependentUpon>FrmSolicitudPrestamo.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmSolicitudPrestamo.vb">
+    <Compile Include="Formularios\FrmSolicitudPrestamo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTipoCuenta.Designer.vb">
+    <Compile Include="Formularios\FrmTipoCuenta.Designer.vb">
       <DependentUpon>FrmTipoCuenta.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmTipoCuenta.vb">
+    <Compile Include="Formularios\FrmTipoCuenta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTipoPrestamo.Designer.vb">
+    <Compile Include="Formularios\FrmTipoPrestamo.Designer.vb">
       <DependentUpon>FrmTipoPrestamo.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmTipoPrestamo.vb">
+    <Compile Include="Formularios\FrmTipoPrestamo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -151,31 +151,31 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FrmCuentaSocio.resx">
+    <EmbeddedResource Include="Formularios\FrmCuentaSocio.resx">
       <DependentUpon>FrmCuentaSocio.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmFinalidadPrestamo.resx">
+    <EmbeddedResource Include="Formularios\FrmFinalidadPrestamo.resx">
       <DependentUpon>FrmFinalidadPrestamo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLugarTrabajo.resx">
+    <EmbeddedResource Include="Formularios\FrmLugarTrabajo.resx">
       <DependentUpon>FrmLugarTrabajo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNacionalidad.resx">
+    <EmbeddedResource Include="Formularios\FrmNacionalidad.resx">
       <DependentUpon>FrmNacionalidad.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmOficialSocio.resx">
+    <EmbeddedResource Include="Formularios\FrmOficialSocio.resx">
       <DependentUpon>FrmOficialSocio.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSocio.resx">
+    <EmbeddedResource Include="Formularios\FrmSocio.resx">
       <DependentUpon>FrmSocio.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSolicitudPrestamo.resx">
+    <EmbeddedResource Include="Formularios\FrmSolicitudPrestamo.resx">
       <DependentUpon>FrmSolicitudPrestamo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTipoCuenta.resx">
+    <EmbeddedResource Include="Formularios\FrmTipoCuenta.resx">
       <DependentUpon>FrmTipoCuenta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTipoPrestamo.resx">
+    <EmbeddedResource Include="Formularios\FrmTipoPrestamo.resx">
       <DependentUpon>FrmTipoPrestamo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -196,6 +196,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Imagenes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
