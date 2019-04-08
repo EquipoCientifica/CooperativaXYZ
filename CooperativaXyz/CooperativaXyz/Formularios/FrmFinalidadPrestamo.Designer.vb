@@ -22,8 +22,12 @@ Partial Class FrmFinalidadPrestamo
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TbNacionalidades = New System.Windows.Forms.TabControl()
-        Me.TbDatosNacionalidad = New System.Windows.Forms.TabPage()
+        Me.components = New System.ComponentModel.Container()
+        Me.TcFinalidad = New System.Windows.Forms.TabControl()
+        Me.CmsOpciones1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TbFinalidad = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnSalir = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
@@ -35,7 +39,7 @@ Partial Class FrmFinalidadPrestamo
         Me.TxtCodFinalidad = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TbListadoNacionalidad = New System.Windows.Forms.TabPage()
+        Me.TbListadoFinalidad = New System.Windows.Forms.TabPage()
         Me.TxtBuscarFinalidad = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.LsvFinalidades = New System.Windows.Forms.ListView()
@@ -43,35 +47,57 @@ Partial Class FrmFinalidadPrestamo
         Me.CHFinalidad = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TbNacionalidades.SuspendLayout()
-        Me.TbDatosNacionalidad.SuspendLayout()
+        Me.EpMensaje = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.TcFinalidad.SuspendLayout()
+        Me.CmsOpciones1.SuspendLayout()
+        Me.TbFinalidad.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.TbListadoNacionalidad.SuspendLayout()
+        Me.TbListadoFinalidad.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        CType(Me.EpMensaje, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TbNacionalidades
+        'TcFinalidad
         '
-        Me.TbNacionalidades.Controls.Add(Me.TbDatosNacionalidad)
-        Me.TbNacionalidades.Controls.Add(Me.TbListadoNacionalidad)
-        Me.TbNacionalidades.Location = New System.Drawing.Point(-1, 108)
-        Me.TbNacionalidades.Name = "TbNacionalidades"
-        Me.TbNacionalidades.SelectedIndex = 0
-        Me.TbNacionalidades.Size = New System.Drawing.Size(803, 341)
-        Me.TbNacionalidades.TabIndex = 13
+        Me.TcFinalidad.ContextMenuStrip = Me.CmsOpciones1
+        Me.TcFinalidad.Controls.Add(Me.TbFinalidad)
+        Me.TcFinalidad.Controls.Add(Me.TbListadoFinalidad)
+        Me.TcFinalidad.Location = New System.Drawing.Point(-1, 108)
+        Me.TcFinalidad.Name = "TcFinalidad"
+        Me.TcFinalidad.SelectedIndex = 0
+        Me.TcFinalidad.Size = New System.Drawing.Size(803, 341)
+        Me.TcFinalidad.TabIndex = 13
         '
-        'TbDatosNacionalidad
+        'CmsOpciones1
         '
-        Me.TbDatosNacionalidad.Controls.Add(Me.GroupBox1)
-        Me.TbDatosNacionalidad.Controls.Add(Me.Panel2)
-        Me.TbDatosNacionalidad.Location = New System.Drawing.Point(4, 22)
-        Me.TbDatosNacionalidad.Name = "TbDatosNacionalidad"
-        Me.TbDatosNacionalidad.Padding = New System.Windows.Forms.Padding(3)
-        Me.TbDatosNacionalidad.Size = New System.Drawing.Size(795, 315)
-        Me.TbDatosNacionalidad.TabIndex = 0
-        Me.TbDatosNacionalidad.Text = "Datos Nacionalidad"
-        Me.TbDatosNacionalidad.UseVisualStyleBackColor = True
+        Me.CmsOpciones1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CmsOpciones1.Name = "CmsOpciones1"
+        Me.CmsOpciones1.Size = New System.Drawing.Size(118, 48)
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
+        'TbFinalidad
+        '
+        Me.TbFinalidad.Controls.Add(Me.GroupBox1)
+        Me.TbFinalidad.Controls.Add(Me.Panel2)
+        Me.TbFinalidad.Location = New System.Drawing.Point(4, 22)
+        Me.TbFinalidad.Name = "TbFinalidad"
+        Me.TbFinalidad.Padding = New System.Windows.Forms.Padding(3)
+        Me.TbFinalidad.Size = New System.Drawing.Size(795, 315)
+        Me.TbFinalidad.TabIndex = 0
+        Me.TbFinalidad.Text = "Datos Finalidad"
+        Me.TbFinalidad.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
@@ -181,18 +207,18 @@ Partial Class FrmFinalidadPrestamo
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Código Finalidad Prestamo"
         '
-        'TbListadoNacionalidad
+        'TbListadoFinalidad
         '
-        Me.TbListadoNacionalidad.Controls.Add(Me.TxtBuscarFinalidad)
-        Me.TbListadoNacionalidad.Controls.Add(Me.Label4)
-        Me.TbListadoNacionalidad.Controls.Add(Me.LsvFinalidades)
-        Me.TbListadoNacionalidad.Location = New System.Drawing.Point(4, 22)
-        Me.TbListadoNacionalidad.Name = "TbListadoNacionalidad"
-        Me.TbListadoNacionalidad.Padding = New System.Windows.Forms.Padding(3)
-        Me.TbListadoNacionalidad.Size = New System.Drawing.Size(795, 315)
-        Me.TbListadoNacionalidad.TabIndex = 1
-        Me.TbListadoNacionalidad.Text = "Listado"
-        Me.TbListadoNacionalidad.UseVisualStyleBackColor = True
+        Me.TbListadoFinalidad.Controls.Add(Me.TxtBuscarFinalidad)
+        Me.TbListadoFinalidad.Controls.Add(Me.Label4)
+        Me.TbListadoFinalidad.Controls.Add(Me.LsvFinalidades)
+        Me.TbListadoFinalidad.Location = New System.Drawing.Point(4, 22)
+        Me.TbListadoFinalidad.Name = "TbListadoFinalidad"
+        Me.TbListadoFinalidad.Padding = New System.Windows.Forms.Padding(3)
+        Me.TbListadoFinalidad.Size = New System.Drawing.Size(795, 315)
+        Me.TbListadoFinalidad.TabIndex = 1
+        Me.TbListadoFinalidad.Text = "Listado"
+        Me.TbListadoFinalidad.UseVisualStyleBackColor = True
         '
         'TxtBuscarFinalidad
         '
@@ -214,6 +240,7 @@ Partial Class FrmFinalidadPrestamo
         'LsvFinalidades
         '
         Me.LsvFinalidades.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.CHCodFinalidad, Me.CHFinalidad})
+        Me.LsvFinalidades.FullRowSelect = True
         Me.LsvFinalidades.GridLines = True
         Me.LsvFinalidades.Location = New System.Drawing.Point(176, 104)
         Me.LsvFinalidades.Name = "LsvFinalidades"
@@ -252,30 +279,36 @@ Partial Class FrmFinalidadPrestamo
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Finalidad del Prestamo"
         '
+        'EpMensaje
+        '
+        Me.EpMensaje.ContainerControl = Me
+        '
         'FrmFinalidadPrestamo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.TbNacionalidades)
+        Me.Controls.Add(Me.TcFinalidad)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FrmFinalidadPrestamo"
         Me.Text = "FrmFinalidadPrestamo"
-        Me.TbNacionalidades.ResumeLayout(False)
-        Me.TbDatosNacionalidad.ResumeLayout(False)
+        Me.TcFinalidad.ResumeLayout(False)
+        Me.CmsOpciones1.ResumeLayout(False)
+        Me.TbFinalidad.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        Me.TbListadoNacionalidad.ResumeLayout(False)
-        Me.TbListadoNacionalidad.PerformLayout()
+        Me.TbListadoFinalidad.ResumeLayout(False)
+        Me.TbListadoFinalidad.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.EpMensaje, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents TbNacionalidades As TabControl
-    Friend WithEvents TbDatosNacionalidad As TabPage
+    Friend WithEvents TcFinalidad As TabControl
+    Friend WithEvents TbFinalidad As TabPage
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents BtnSalir As Button
     Friend WithEvents BtnCancelar As Button
@@ -287,7 +320,7 @@ Partial Class FrmFinalidadPrestamo
     Friend WithEvents TxtCodFinalidad As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TbListadoNacionalidad As TabPage
+    Friend WithEvents TbListadoFinalidad As TabPage
     Friend WithEvents TxtBuscarFinalidad As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents LsvFinalidades As ListView
@@ -295,4 +328,8 @@ Partial Class FrmFinalidadPrestamo
     Friend WithEvents CHFinalidad As ColumnHeader
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label3 As Label
+    Friend WithEvents CmsOpciones1 As ContextMenuStrip
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EpMensaje As ErrorProvider
 End Class
