@@ -22,6 +22,7 @@ Partial Class FrmOficialSocio
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.TbDatosOficial = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -33,7 +34,7 @@ Partial Class FrmOficialSocio
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TxtApellido = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.BtnTipoCuenta = New System.Windows.Forms.TextBox()
+        Me.TxtNombre = New System.Windows.Forms.TextBox()
         Me.TxtCodigoOficialCredito = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -46,12 +47,18 @@ Partial Class FrmOficialSocio
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.CMSOpciones = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EpMensaje = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.TbDatosOficial.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TbListadoOficiales.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.CMSOpciones.SuspendLayout()
+        CType(Me.EpMensaje, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TbDatosOficial
@@ -139,7 +146,7 @@ Partial Class FrmOficialSocio
         Me.Panel2.BackColor = System.Drawing.Color.LightSkyBlue
         Me.Panel2.Controls.Add(Me.TxtApellido)
         Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Controls.Add(Me.BtnTipoCuenta)
+        Me.Panel2.Controls.Add(Me.TxtNombre)
         Me.Panel2.Controls.Add(Me.TxtCodigoOficialCredito)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.Label1)
@@ -167,13 +174,13 @@ Partial Class FrmOficialSocio
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Apellido"
         '
-        'BtnTipoCuenta
+        'TxtNombre
         '
-        Me.BtnTipoCuenta.Location = New System.Drawing.Point(396, 52)
-        Me.BtnTipoCuenta.Multiline = True
-        Me.BtnTipoCuenta.Name = "BtnTipoCuenta"
-        Me.BtnTipoCuenta.Size = New System.Drawing.Size(189, 23)
-        Me.BtnTipoCuenta.TabIndex = 6
+        Me.TxtNombre.Location = New System.Drawing.Point(396, 52)
+        Me.TxtNombre.Multiline = True
+        Me.TxtNombre.Name = "TxtNombre"
+        Me.TxtNombre.Size = New System.Drawing.Size(189, 23)
+        Me.TxtNombre.TabIndex = 6
         '
         'TxtCodigoOficialCredito
         '
@@ -228,6 +235,8 @@ Partial Class FrmOficialSocio
         'LsvOficiales
         '
         Me.LsvOficiales.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.CHCodOficial, Me.CHNombre, Me.CHApellidos})
+        Me.LsvOficiales.ContextMenuStrip = Me.CMSOpciones
+        Me.LsvOficiales.FullRowSelect = True
         Me.LsvOficiales.GridLines = True
         Me.LsvOficiales.Location = New System.Drawing.Point(166, 88)
         Me.LsvOficiales.Name = "LsvOficiales"
@@ -255,7 +264,7 @@ Partial Class FrmOficialSocio
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Lucida Bright", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(175, 35)
+        Me.Label5.Location = New System.Drawing.Point(213, 32)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(48, 15)
         Me.Label5.TabIndex = 11
@@ -281,6 +290,28 @@ Partial Class FrmOficialSocio
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Oficial Credito"
         '
+        'CMSOpciones
+        '
+        Me.CMSOpciones.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CMSOpciones.Name = "CMSOpciones"
+        Me.CMSOpciones.Size = New System.Drawing.Size(118, 48)
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
+        'EpMensaje
+        '
+        Me.EpMensaje.ContainerControl = Me
+        '
         'FrmOficialSocio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -299,6 +330,8 @@ Partial Class FrmOficialSocio
         Me.TbListadoOficiales.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.CMSOpciones.ResumeLayout(False)
+        CType(Me.EpMensaje, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -314,7 +347,7 @@ Partial Class FrmOficialSocio
     Friend WithEvents Panel2 As Panel
     Friend WithEvents TxtApellido As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents BtnTipoCuenta As TextBox
+    Friend WithEvents TxtNombre As TextBox
     Friend WithEvents TxtCodigoOficialCredito As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
@@ -327,4 +360,8 @@ Partial Class FrmOficialSocio
     Friend WithEvents Label5 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label3 As Label
+    Friend WithEvents CMSOpciones As ContextMenuStrip
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EpMensaje As ErrorProvider
 End Class
