@@ -300,7 +300,7 @@ Public Class FrmTipoPrestamo
         TxtCodTipoPrestamo.Text = LsvTipoPrestamo.FocusedItem.SubItems(0).Text
         TxtTipoPrestamo.Text = LsvTipoPrestamo.FocusedItem.SubItems(1).Text
 
-        TbDatosTipoPrestamo.Show()
+        TcTipoPrestamo.SelectedIndex = 0
         TxtTipoPrestamo.Focus()
 
         HabilitarBotones(False, False, True, True)

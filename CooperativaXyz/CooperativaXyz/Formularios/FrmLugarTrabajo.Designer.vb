@@ -22,7 +22,8 @@ Partial Class FrmLugarTrabajo
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.components = New System.ComponentModel.Container()
+        Me.TcLugarTrabajo = New System.Windows.Forms.TabControl()
         Me.TpLugarTrabajo = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnSalir = New System.Windows.Forms.Button()
@@ -38,28 +39,34 @@ Partial Class FrmLugarTrabajo
         Me.TpLista = New System.Windows.Forms.TabPage()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
-        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.LsvLugarTrabajo = New System.Windows.Forms.ListView()
         Me.ChCodigoLugarTrabajo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ChLugarTrabajo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TabControl1.SuspendLayout()
+        Me.CmOpciones = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EpMensaje = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TcLugarTrabajo.SuspendLayout()
         Me.TpLugarTrabajo.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TpLista.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.CmOpciones.SuspendLayout()
+        CType(Me.EpMensaje, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TabControl1
+        'TcLugarTrabajo
         '
-        Me.TabControl1.Controls.Add(Me.TpLugarTrabajo)
-        Me.TabControl1.Controls.Add(Me.TpLista)
-        Me.TabControl1.Location = New System.Drawing.Point(6, 117)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(821, 322)
-        Me.TabControl1.TabIndex = 11
+        Me.TcLugarTrabajo.Controls.Add(Me.TpLugarTrabajo)
+        Me.TcLugarTrabajo.Controls.Add(Me.TpLista)
+        Me.TcLugarTrabajo.Location = New System.Drawing.Point(6, 117)
+        Me.TcLugarTrabajo.Name = "TcLugarTrabajo"
+        Me.TcLugarTrabajo.SelectedIndex = 0
+        Me.TcLugarTrabajo.Size = New System.Drawing.Size(821, 322)
+        Me.TcLugarTrabajo.TabIndex = 11
         '
         'TpLugarTrabajo
         '
@@ -185,7 +192,7 @@ Partial Class FrmLugarTrabajo
         '
         Me.TpLista.Controls.Add(Me.Label12)
         Me.TpLista.Controls.Add(Me.TxtBuscar)
-        Me.TpLista.Controls.Add(Me.ListView1)
+        Me.TpLista.Controls.Add(Me.LsvLugarTrabajo)
         Me.TpLista.Location = New System.Drawing.Point(4, 22)
         Me.TpLista.Name = "TpLista"
         Me.TpLista.Padding = New System.Windows.Forms.Padding(3)
@@ -210,16 +217,17 @@ Partial Class FrmLugarTrabajo
         Me.TxtBuscar.Size = New System.Drawing.Size(216, 20)
         Me.TxtBuscar.TabIndex = 4
         '
-        'ListView1
+        'LsvLugarTrabajo
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChCodigoLugarTrabajo, Me.ChLugarTrabajo})
-        Me.ListView1.GridLines = True
-        Me.ListView1.Location = New System.Drawing.Point(209, 68)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(380, 199)
-        Me.ListView1.TabIndex = 0
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
+        Me.LsvLugarTrabajo.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChCodigoLugarTrabajo, Me.ChLugarTrabajo})
+        Me.LsvLugarTrabajo.FullRowSelect = True
+        Me.LsvLugarTrabajo.GridLines = True
+        Me.LsvLugarTrabajo.Location = New System.Drawing.Point(209, 68)
+        Me.LsvLugarTrabajo.Name = "LsvLugarTrabajo"
+        Me.LsvLugarTrabajo.Size = New System.Drawing.Size(380, 199)
+        Me.LsvLugarTrabajo.TabIndex = 0
+        Me.LsvLugarTrabajo.UseCompatibleStateImageBehavior = False
+        Me.LsvLugarTrabajo.View = System.Windows.Forms.View.Details
         '
         'ChCodigoLugarTrabajo
         '
@@ -251,16 +259,40 @@ Partial Class FrmLugarTrabajo
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Gestión Lugar De Trabajo"
         '
+        'CmOpciones
+        '
+        Me.CmOpciones.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CmOpciones.Name = "CmOpciones"
+        Me.CmOpciones.Size = New System.Drawing.Size(118, 48)
+        '
+        'EpMensaje
+        '
+        Me.EpMensaje.ContainerControl = Me
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
         'FrmLugarTrabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(833, 450)
-        Me.Controls.Add(Me.TabControl1)
+        Me.ContextMenuStrip = Me.CmOpciones
+        Me.Controls.Add(Me.TcLugarTrabajo)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FrmLugarTrabajo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmLugarTrabajo"
-        Me.TabControl1.ResumeLayout(False)
+        Me.TcLugarTrabajo.ResumeLayout(False)
         Me.TpLugarTrabajo.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
@@ -269,11 +301,13 @@ Partial Class FrmLugarTrabajo
         Me.TpLista.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.CmOpciones.ResumeLayout(False)
+        CType(Me.EpMensaje, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TcLugarTrabajo As TabControl
     Friend WithEvents TpLugarTrabajo As TabPage
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents BtnSalir As Button
@@ -289,9 +323,13 @@ Partial Class FrmLugarTrabajo
     Friend WithEvents TpLista As TabPage
     Friend WithEvents Label12 As Label
     Friend WithEvents TxtBuscar As TextBox
-    Friend WithEvents ListView1 As ListView
+    Friend WithEvents LsvLugarTrabajo As ListView
     Friend WithEvents ChCodigoLugarTrabajo As ColumnHeader
     Friend WithEvents ChLugarTrabajo As ColumnHeader
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label3 As Label
+    Friend WithEvents CmOpciones As ContextMenuStrip
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EpMensaje As ErrorProvider
 End Class

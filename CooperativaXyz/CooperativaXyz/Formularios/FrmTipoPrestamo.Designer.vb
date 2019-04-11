@@ -23,7 +23,7 @@ Partial Class FrmTipoPrestamo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.TbTipoPrestamo = New System.Windows.Forms.TabControl()
+        Me.TcTipoPrestamo = New System.Windows.Forms.TabControl()
         Me.TbDatosTipoPrestamo = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnSalir = New System.Windows.Forms.Button()
@@ -49,7 +49,7 @@ Partial Class FrmTipoPrestamo
         Me.Label3 = New System.Windows.Forms.Label()
         Me.EpMensaje = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.TbTipoPrestamo.SuspendLayout()
+        Me.TcTipoPrestamo.SuspendLayout()
         Me.TbDatosTipoPrestamo.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -59,15 +59,15 @@ Partial Class FrmTipoPrestamo
         CType(Me.EpMensaje, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TbTipoPrestamo
+        'TcTipoPrestamo
         '
-        Me.TbTipoPrestamo.Controls.Add(Me.TbDatosTipoPrestamo)
-        Me.TbTipoPrestamo.Controls.Add(Me.TbListadoTipoPrestamo)
-        Me.TbTipoPrestamo.Location = New System.Drawing.Point(0, 108)
-        Me.TbTipoPrestamo.Name = "TbTipoPrestamo"
-        Me.TbTipoPrestamo.SelectedIndex = 0
-        Me.TbTipoPrestamo.Size = New System.Drawing.Size(784, 341)
-        Me.TbTipoPrestamo.TabIndex = 13
+        Me.TcTipoPrestamo.Controls.Add(Me.TbDatosTipoPrestamo)
+        Me.TcTipoPrestamo.Controls.Add(Me.TbListadoTipoPrestamo)
+        Me.TcTipoPrestamo.Location = New System.Drawing.Point(0, 108)
+        Me.TcTipoPrestamo.Name = "TcTipoPrestamo"
+        Me.TcTipoPrestamo.SelectedIndex = 0
+        Me.TcTipoPrestamo.Size = New System.Drawing.Size(784, 341)
+        Me.TcTipoPrestamo.TabIndex = 13
         '
         'TbDatosTipoPrestamo
         '
@@ -294,11 +294,11 @@ Partial Class FrmTipoPrestamo
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(784, 450)
-        Me.Controls.Add(Me.TbTipoPrestamo)
+        Me.Controls.Add(Me.TcTipoPrestamo)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FrmTipoPrestamo"
         Me.Text = "FrmTipoPrestamo"
-        Me.TbTipoPrestamo.ResumeLayout(False)
+        Me.TcTipoPrestamo.ResumeLayout(False)
         Me.TbDatosTipoPrestamo.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
@@ -313,7 +313,7 @@ Partial Class FrmTipoPrestamo
 
     End Sub
 
-    Friend WithEvents TbTipoPrestamo As TabControl
+    Friend WithEvents TcTipoPrestamo As TabControl
     Friend WithEvents TbDatosTipoPrestamo As TabPage
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents BtnSalir As Button

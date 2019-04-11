@@ -22,7 +22,8 @@ Partial Class FrmTipoCuenta
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.components = New System.ComponentModel.Container()
+        Me.TcTipoCuenta = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnSalir = New System.Windows.Forms.Button()
@@ -32,34 +33,41 @@ Partial Class FrmTipoCuenta
         Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TxtTipoCuenta = New System.Windows.Forms.TextBox()
-        Me.IdTipoCuenta = New System.Windows.Forms.TextBox()
+        Me.TxtIdTipoCuenta = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
-        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.LsvTipoCuenta = New System.Windows.Forms.ListView()
         Me.ChCodigoTipoCuenta = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ChLTipoCuenta = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TabControl1.SuspendLayout()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.CmOpciones = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EpMensaje = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TcTipoCuenta.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.CmOpciones.SuspendLayout()
+        CType(Me.EpMensaje, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TabControl1
+        'TcTipoCuenta
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(4, 107)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(776, 324)
-        Me.TabControl1.TabIndex = 9
+        Me.TcTipoCuenta.Controls.Add(Me.TabPage1)
+        Me.TcTipoCuenta.Controls.Add(Me.TabPage2)
+        Me.TcTipoCuenta.Location = New System.Drawing.Point(4, 107)
+        Me.TcTipoCuenta.Name = "TcTipoCuenta"
+        Me.TcTipoCuenta.SelectedIndex = 0
+        Me.TcTipoCuenta.Size = New System.Drawing.Size(776, 324)
+        Me.TcTipoCuenta.TabIndex = 9
         '
         'TabPage1
         '
@@ -70,7 +78,7 @@ Partial Class FrmTipoCuenta
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(768, 298)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Lugar Trabajo"
+        Me.TabPage1.Text = "Tipo Cuenta"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'GroupBox1
@@ -135,7 +143,7 @@ Partial Class FrmTipoCuenta
         '
         Me.Panel2.BackColor = System.Drawing.Color.LightSkyBlue
         Me.Panel2.Controls.Add(Me.TxtTipoCuenta)
-        Me.Panel2.Controls.Add(Me.IdTipoCuenta)
+        Me.Panel2.Controls.Add(Me.TxtIdTipoCuenta)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Location = New System.Drawing.Point(-14, 17)
@@ -151,13 +159,13 @@ Partial Class FrmTipoCuenta
         Me.TxtTipoCuenta.Size = New System.Drawing.Size(189, 33)
         Me.TxtTipoCuenta.TabIndex = 6
         '
-        'IdTipoCuenta
+        'TxtIdTipoCuenta
         '
-        Me.IdTipoCuenta.Location = New System.Drawing.Point(396, 20)
-        Me.IdTipoCuenta.Multiline = True
-        Me.IdTipoCuenta.Name = "IdTipoCuenta"
-        Me.IdTipoCuenta.Size = New System.Drawing.Size(189, 33)
-        Me.IdTipoCuenta.TabIndex = 5
+        Me.TxtIdTipoCuenta.Location = New System.Drawing.Point(396, 20)
+        Me.TxtIdTipoCuenta.Multiline = True
+        Me.TxtIdTipoCuenta.Name = "TxtIdTipoCuenta"
+        Me.TxtIdTipoCuenta.Size = New System.Drawing.Size(189, 33)
+        Me.TxtIdTipoCuenta.TabIndex = 5
         '
         'Label2
         '
@@ -185,7 +193,7 @@ Partial Class FrmTipoCuenta
         '
         Me.TabPage2.Controls.Add(Me.Label12)
         Me.TabPage2.Controls.Add(Me.TxtBuscar)
-        Me.TabPage2.Controls.Add(Me.ListView1)
+        Me.TabPage2.Controls.Add(Me.LsvTipoCuenta)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -210,16 +218,17 @@ Partial Class FrmTipoCuenta
         Me.TxtBuscar.Size = New System.Drawing.Size(216, 20)
         Me.TxtBuscar.TabIndex = 7
         '
-        'ListView1
+        'LsvTipoCuenta
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChCodigoTipoCuenta, Me.ChLTipoCuenta})
-        Me.ListView1.GridLines = True
-        Me.ListView1.Location = New System.Drawing.Point(194, 72)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(380, 199)
-        Me.ListView1.TabIndex = 6
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
+        Me.LsvTipoCuenta.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChCodigoTipoCuenta, Me.ChLTipoCuenta})
+        Me.LsvTipoCuenta.FullRowSelect = True
+        Me.LsvTipoCuenta.GridLines = True
+        Me.LsvTipoCuenta.Location = New System.Drawing.Point(194, 72)
+        Me.LsvTipoCuenta.Name = "LsvTipoCuenta"
+        Me.LsvTipoCuenta.Size = New System.Drawing.Size(380, 199)
+        Me.LsvTipoCuenta.TabIndex = 6
+        Me.LsvTipoCuenta.UseCompatibleStateImageBehavior = False
+        Me.LsvTipoCuenta.View = System.Windows.Forms.View.Details
         '
         'ChCodigoTipoCuenta
         '
@@ -234,6 +243,7 @@ Partial Class FrmTipoCuenta
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Location = New System.Drawing.Point(-6, 1)
         Me.Panel1.Name = "Panel1"
@@ -251,16 +261,49 @@ Partial Class FrmTipoCuenta
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Tipo de Cuenta"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(741, 71)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(45, 26)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'CmOpciones
+        '
+        Me.CmOpciones.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CmOpciones.Name = "CmOpciones"
+        Me.CmOpciones.Size = New System.Drawing.Size(118, 48)
+        '
+        'EpMensaje
+        '
+        Me.EpMensaje.ContainerControl = Me
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
         'FrmTipoCuenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(784, 450)
-        Me.Controls.Add(Me.TabControl1)
+        Me.ContextMenuStrip = Me.CmOpciones
+        Me.Controls.Add(Me.TcTipoCuenta)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FrmTipoCuenta"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "FrmTipoCuenta"
-        Me.TabControl1.ResumeLayout(False)
+        Me.TcTipoCuenta.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
@@ -269,11 +312,13 @@ Partial Class FrmTipoCuenta
         Me.TabPage2.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.CmOpciones.ResumeLayout(False)
+        CType(Me.EpMensaje, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TcTipoCuenta As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents BtnSalir As Button
@@ -283,15 +328,20 @@ Partial Class FrmTipoCuenta
     Friend WithEvents BtnNuevo As Button
     Friend WithEvents Panel2 As Panel
     Friend WithEvents TxtTipoCuenta As TextBox
-    Friend WithEvents IdTipoCuenta As TextBox
+    Friend WithEvents TxtIdTipoCuenta As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Label12 As Label
     Friend WithEvents TxtBuscar As TextBox
-    Friend WithEvents ListView1 As ListView
+    Friend WithEvents LsvTipoCuenta As ListView
     Friend WithEvents ChCodigoTipoCuenta As ColumnHeader
     Friend WithEvents ChLTipoCuenta As ColumnHeader
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label3 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents CmOpciones As ContextMenuStrip
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EpMensaje As ErrorProvider
 End Class
