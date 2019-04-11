@@ -34,7 +34,7 @@ Public Class FrmSocio
                     End With
                 End While
             Catch ex As Exception
-                MessageBox.Show("Error al Mostrar los datos", "CooperativaXyz", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Error al Mostrar los datos socios ", "CooperativaXyz", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Finally
                 Cn.Close()
             End Try
@@ -58,7 +58,8 @@ Public Class FrmSocio
                     .Parameters.Add("@CodSocio", SqlDbType.NVarChar, 15).Value = TxtCodigoSocio.Text
                     .Parameters.Add("@Nombres", SqlDbType.NVarChar, 50).Value = TxtNombres.Text
                     .Parameters.Add("@Apellidos", SqlDbType.NVarChar, 50).Value = TxtApellidos.Text
-                    .Parameters.Add("@Rtn", SqlDbType.Int, 14).Value = TxtRtn.Text
+                    .Parameters.Add("@Rtn", SqlDbType.NVarChar, 14).Value = TxtRtn.Text
+                    .Parameters.Add("@Direccion", SqlDbType.NVarChar, 300).Value = TxtDireccion.Text
                     .Parameters.Add("@IdNacionalidad", SqlDbType.Int).Value = CInt(CboIdNacionalidad.SelectedValue)
                     .Parameters.Add("@IdEstadoCivil", SqlDbType.Int).Value = CInt(CboIdEstadoCivil.SelectedValue)
                     .Parameters.Add("@IdLugarTrabajo", SqlDbType.Int).Value = CInt(CboIdLugarTrabajo.SelectedValue)
@@ -101,7 +102,7 @@ Public Class FrmSocio
                 CboIdNacionalidad.ValueMember = Ds.Tables(0).Columns("IdNacionalidad").ToString
 
             Catch ex As Exception
-                MessageBox.Show("Error al Mostrar los datos", "CooperativaXyz", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Error al Mostrar los datos nacionalidad" + ex.Message, "CooperativaXyz", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Finally
                 Cn.Close()
             End Try
@@ -132,7 +133,7 @@ Public Class FrmSocio
                 CboIdEstadoCivil.ValueMember = Ds.Tables(0).Columns("IdEstadoCivil").ToString
 
             Catch ex As Exception
-                MessageBox.Show("Error al Mostrar los datos", "CooperativaXyz", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Error al Mostrar los datos estado civil", "CooperativaXyz", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Finally
                 Cn.Close()
             End Try
@@ -163,7 +164,7 @@ Public Class FrmSocio
                 CboIdLugarTrabajo.ValueMember = Ds.Tables(0).Columns("IdLugarTrabajo").ToString
 
             Catch ex As Exception
-                MessageBox.Show("Error al Mostrar los datos", "CooperativaXyz", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Error al Mostrar los datos lugar trabajo", "CooperativaXyz", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Finally
                 Cn.Close()
             End Try
@@ -355,9 +356,6 @@ Public Class FrmSocio
         TxtNombres.Text = Nothing
         TxtApellidos.Text = Nothing
         TxtDireccion.Text = Nothing
-        CboIdNacionalidad.Text = "--Seleccione--"
-        CboIdEstadoCivil.Text = "--Seleccione--"
-        CboIdLugarTrabajo.Text = "--Seleccione--"
         TxtTelefonoCasa.Text = Nothing
         TxtTelefonoTrabajo.Text = Nothing
     End Sub
@@ -376,13 +374,15 @@ Public Class FrmSocio
 
     Private Sub FrmSocio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MostrarSocios()
+
     End Sub
 
     Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
         HabilitarBotones(False, True, False, True, True)
-        LlenarComboNacionalidad()
+        MostrarSocios()
         LlenarComboEstadoCivil()
         LlenarComboLugarTrabajo()
+        LlenarComboNacionalidad()
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
@@ -425,6 +425,7 @@ Public Class FrmSocio
     End Sub
 
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
+        HabilitarBotones(True, False, False, False, True)
         Limpiar()
     End Sub
 
