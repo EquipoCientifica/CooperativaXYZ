@@ -182,7 +182,7 @@ Public Class FrmTipoCuenta
 
             Catch ex As Exception
 
-                MessageBox.Show("Error al mostrar Tipos de cuenta" + ex.Message, "SIFO", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Error al mostrar Tipos de cuenta" + ex.Message, "CooperativaXYZ", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Finally
                 Cn.Close()
 
