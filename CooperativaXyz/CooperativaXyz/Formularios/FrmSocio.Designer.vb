@@ -25,7 +25,6 @@ Partial Class FrmSocio
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TpSocio = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.BtnSalir = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
@@ -81,7 +80,7 @@ Partial Class FrmSocio
         Me.TabControl1.Controls.Add(Me.TpSocio)
         Me.TabControl1.Controls.Add(Me.TpListado)
         Me.TabControl1.Location = New System.Drawing.Point(4, 132)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(1096, 512)
@@ -92,9 +91,9 @@ Partial Class FrmSocio
         Me.TpSocio.Controls.Add(Me.GroupBox1)
         Me.TpSocio.Controls.Add(Me.Panel2)
         Me.TpSocio.Location = New System.Drawing.Point(4, 25)
-        Me.TpSocio.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TpSocio.Margin = New System.Windows.Forms.Padding(4)
         Me.TpSocio.Name = "TpSocio"
-        Me.TpSocio.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TpSocio.Padding = New System.Windows.Forms.Padding(4)
         Me.TpSocio.Size = New System.Drawing.Size(1088, 483)
         Me.TpSocio.TabIndex = 0
         Me.TpSocio.Text = "Socio"
@@ -103,38 +102,24 @@ Partial Class FrmSocio
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Silver
-        Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.BtnSalir)
         Me.GroupBox1.Controls.Add(Me.BtnCancelar)
         Me.GroupBox1.Controls.Add(Me.BtnModificar)
         Me.GroupBox1.Controls.Add(Me.BtnGuardar)
         Me.GroupBox1.Controls.Add(Me.BtnNuevo)
-        Me.GroupBox1.Location = New System.Drawing.Point(35, 383)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Location = New System.Drawing.Point(61, 387)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(953, 86)
         Me.GroupBox1.TabIndex = 15
         Me.GroupBox1.TabStop = False
         '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Azure
-        Me.Button1.Location = New System.Drawing.Point(835, 17)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 62)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Mostrar Socios"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'BtnSalir
         '
         Me.BtnSalir.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.BtnSalir.Location = New System.Drawing.Point(697, 17)
-        Me.BtnSalir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnSalir.Location = New System.Drawing.Point(760, 16)
+        Me.BtnSalir.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnSalir.Name = "BtnSalir"
         Me.BtnSalir.Size = New System.Drawing.Size(100, 62)
         Me.BtnSalir.TabIndex = 4
@@ -143,8 +128,8 @@ Partial Class FrmSocio
         'BtnCancelar
         '
         Me.BtnCancelar.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.BtnCancelar.Location = New System.Drawing.Point(552, 17)
-        Me.BtnCancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnCancelar.Location = New System.Drawing.Point(599, 16)
+        Me.BtnCancelar.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(100, 62)
         Me.BtnCancelar.TabIndex = 3
@@ -153,8 +138,8 @@ Partial Class FrmSocio
         'BtnModificar
         '
         Me.BtnModificar.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.BtnModificar.Location = New System.Drawing.Point(389, 17)
-        Me.BtnModificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnModificar.Location = New System.Drawing.Point(430, 16)
+        Me.BtnModificar.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(100, 62)
         Me.BtnModificar.TabIndex = 2
@@ -163,8 +148,8 @@ Partial Class FrmSocio
         'BtnGuardar
         '
         Me.BtnGuardar.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.BtnGuardar.Location = New System.Drawing.Point(213, 17)
-        Me.BtnGuardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnGuardar.Location = New System.Drawing.Point(276, 16)
+        Me.BtnGuardar.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(100, 62)
         Me.BtnGuardar.TabIndex = 1
@@ -173,8 +158,8 @@ Partial Class FrmSocio
         'BtnNuevo
         '
         Me.BtnNuevo.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.BtnNuevo.Location = New System.Drawing.Point(44, 17)
-        Me.BtnNuevo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnNuevo.Location = New System.Drawing.Point(107, 16)
+        Me.BtnNuevo.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnNuevo.Name = "BtnNuevo"
         Me.BtnNuevo.Size = New System.Drawing.Size(100, 62)
         Me.BtnNuevo.TabIndex = 0
@@ -204,7 +189,7 @@ Partial Class FrmSocio
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Location = New System.Drawing.Point(0, 30)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1071, 343)
         Me.Panel2.TabIndex = 14
@@ -212,7 +197,7 @@ Partial Class FrmSocio
         'TxtTelefonoTrabajo
         '
         Me.TxtTelefonoTrabajo.Location = New System.Drawing.Point(779, 242)
-        Me.TxtTelefonoTrabajo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtTelefonoTrabajo.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtTelefonoTrabajo.Multiline = True
         Me.TxtTelefonoTrabajo.Name = "TxtTelefonoTrabajo"
         Me.TxtTelefonoTrabajo.Size = New System.Drawing.Size(268, 24)
@@ -221,7 +206,7 @@ Partial Class FrmSocio
         'TxtTelefonoCasa
         '
         Me.TxtTelefonoCasa.Location = New System.Drawing.Point(779, 190)
-        Me.TxtTelefonoCasa.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtTelefonoCasa.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtTelefonoCasa.Multiline = True
         Me.TxtTelefonoCasa.Name = "TxtTelefonoCasa"
         Me.TxtTelefonoCasa.Size = New System.Drawing.Size(268, 24)
@@ -231,7 +216,7 @@ Partial Class FrmSocio
         '
         Me.TxtIdLugarTrabajo.FormattingEnabled = True
         Me.TxtIdLugarTrabajo.Location = New System.Drawing.Point(779, 135)
-        Me.TxtIdLugarTrabajo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtIdLugarTrabajo.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtIdLugarTrabajo.Name = "TxtIdLugarTrabajo"
         Me.TxtIdLugarTrabajo.Size = New System.Drawing.Size(268, 24)
         Me.TxtIdLugarTrabajo.TabIndex = 22
@@ -239,8 +224,8 @@ Partial Class FrmSocio
         'CboIdEstadoCivil
         '
         Me.CboIdEstadoCivil.FormattingEnabled = True
-        Me.CboIdEstadoCivil.Location = New System.Drawing.Point(779, 71)
-        Me.CboIdEstadoCivil.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CboIdEstadoCivil.Location = New System.Drawing.Point(779, 77)
+        Me.CboIdEstadoCivil.Margin = New System.Windows.Forms.Padding(4)
         Me.CboIdEstadoCivil.Name = "CboIdEstadoCivil"
         Me.CboIdEstadoCivil.Size = New System.Drawing.Size(268, 24)
         Me.CboIdEstadoCivil.TabIndex = 21
@@ -249,18 +234,18 @@ Partial Class FrmSocio
         '
         Me.CboIdNacionalidad.FormattingEnabled = True
         Me.CboIdNacionalidad.Location = New System.Drawing.Point(779, 25)
-        Me.CboIdNacionalidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CboIdNacionalidad.Margin = New System.Windows.Forms.Padding(4)
         Me.CboIdNacionalidad.Name = "CboIdNacionalidad"
         Me.CboIdNacionalidad.Size = New System.Drawing.Size(268, 24)
         Me.CboIdNacionalidad.TabIndex = 20
         '
         'TxtDireccion
         '
-        Me.TxtDireccion.Location = New System.Drawing.Point(176, 287)
-        Me.TxtDireccion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtDireccion.Location = New System.Drawing.Point(176, 247)
+        Me.TxtDireccion.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtDireccion.Multiline = True
         Me.TxtDireccion.Name = "TxtDireccion"
-        Me.TxtDireccion.Size = New System.Drawing.Size(871, 24)
+        Me.TxtDireccion.Size = New System.Drawing.Size(313, 68)
         Me.TxtDireccion.TabIndex = 19
         '
         'Label10
@@ -277,8 +262,8 @@ Partial Class FrmSocio
         '
         'TxtApellidos
         '
-        Me.TxtApellidos.Location = New System.Drawing.Point(176, 133)
-        Me.TxtApellidos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtApellidos.Location = New System.Drawing.Point(176, 131)
+        Me.TxtApellidos.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtApellidos.Multiline = True
         Me.TxtApellidos.Name = "TxtApellidos"
         Me.TxtApellidos.Size = New System.Drawing.Size(269, 24)
@@ -289,29 +274,29 @@ Partial Class FrmSocio
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Lucida Bright", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.DarkSlateGray
-        Me.Label9.Location = New System.Drawing.Point(519, 133)
+        Me.Label9.Location = New System.Drawing.Point(586, 132)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(222, 23)
+        Me.Label9.Size = New System.Drawing.Size(150, 23)
         Me.Label9.TabIndex = 12
-        Me.Label9.Text = "Codigo Lugar Trabajo"
+        Me.Label9.Text = "Lugar Trabajo"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Lucida Bright", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.DarkSlateGray
-        Me.Label7.Location = New System.Drawing.Point(524, 22)
+        Me.Label7.Location = New System.Drawing.Point(591, 21)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(209, 23)
+        Me.Label7.Size = New System.Drawing.Size(137, 23)
         Me.Label7.TabIndex = 10
-        Me.Label7.Text = "Codigo Nacionalidad"
+        Me.Label7.Text = "Nacionalidad"
         '
         'TxtRtn
         '
-        Me.TxtRtn.Location = New System.Drawing.Point(176, 210)
-        Me.TxtRtn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtRtn.Location = New System.Drawing.Point(176, 187)
+        Me.TxtRtn.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtRtn.Multiline = True
         Me.TxtRtn.Name = "TxtRtn"
         Me.TxtRtn.Size = New System.Drawing.Size(269, 26)
@@ -332,7 +317,7 @@ Partial Class FrmSocio
         'TxtNombres
         '
         Me.TxtNombres.Location = New System.Drawing.Point(176, 71)
-        Me.TxtNombres.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtNombres.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtNombres.Multiline = True
         Me.TxtNombres.Name = "TxtNombres"
         Me.TxtNombres.Size = New System.Drawing.Size(269, 26)
@@ -343,17 +328,17 @@ Partial Class FrmSocio
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Lucida Bright", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.DarkSlateGray
-        Me.Label8.Location = New System.Drawing.Point(541, 69)
+        Me.Label8.Location = New System.Drawing.Point(607, 74)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(193, 23)
+        Me.Label8.Size = New System.Drawing.Size(121, 23)
         Me.Label8.TabIndex = 11
-        Me.Label8.Text = "Codigo Estado Civil"
+        Me.Label8.Text = "Estado Civil"
         '
         'TxtCodigoSocio
         '
         Me.TxtCodigoSocio.Location = New System.Drawing.Point(176, 18)
-        Me.TxtCodigoSocio.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtCodigoSocio.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCodigoSocio.Multiline = True
         Me.TxtCodigoSocio.Name = "TxtCodigoSocio"
         Me.TxtCodigoSocio.Size = New System.Drawing.Size(117, 26)
@@ -364,19 +349,19 @@ Partial Class FrmSocio
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Lucida Bright", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.DarkSlateGray
-        Me.Label6.Location = New System.Drawing.Point(40, 286)
+        Me.Label6.Location = New System.Drawing.Point(45, 239)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(100, 23)
         Me.Label6.TabIndex = 9
-        Me.Label6.Text = "Direccion"
+        Me.Label6.Text = "Dirección"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Lucida Bright", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.DarkSlateGray
-        Me.Label5.Location = New System.Drawing.Point(75, 213)
+        Me.Label5.Location = New System.Drawing.Point(75, 190)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(53, 23)
@@ -388,7 +373,7 @@ Partial Class FrmSocio
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Lucida Bright", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.DarkSlateGray
-        Me.Label4.Location = New System.Drawing.Point(48, 133)
+        Me.Label4.Location = New System.Drawing.Point(48, 131)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(97, 23)
@@ -417,7 +402,7 @@ Partial Class FrmSocio
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(131, 23)
         Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Codigo Socio"
+        Me.Label1.Text = "Código Socio"
         '
         'TpListado
         '
@@ -425,10 +410,10 @@ Partial Class FrmSocio
         Me.TpListado.Controls.Add(Me.TxtBuscar)
         Me.TpListado.Controls.Add(Me.LsvLugarTrabajo)
         Me.TpListado.Location = New System.Drawing.Point(4, 25)
-        Me.TpListado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TpListado.Margin = New System.Windows.Forms.Padding(4)
         Me.TpListado.Name = "TpListado"
-        Me.TpListado.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.TpListado.Size = New System.Drawing.Size(1087, 483)
+        Me.TpListado.Padding = New System.Windows.Forms.Padding(4)
+        Me.TpListado.Size = New System.Drawing.Size(1088, 483)
         Me.TpListado.TabIndex = 1
         Me.TpListado.Text = "Listado"
         Me.TpListado.UseVisualStyleBackColor = True
@@ -446,7 +431,7 @@ Partial Class FrmSocio
         'TxtBuscar
         '
         Me.TxtBuscar.Location = New System.Drawing.Point(291, 41)
-        Me.TxtBuscar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtBuscar.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtBuscar.Name = "TxtBuscar"
         Me.TxtBuscar.Size = New System.Drawing.Size(287, 22)
         Me.TxtBuscar.TabIndex = 2
@@ -456,7 +441,7 @@ Partial Class FrmSocio
         Me.LsvLugarTrabajo.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChCodSocio, Me.ChNombre, Me.ChApellidos, Me.ChRTN, Me.ChDireccion, Me.ChNacionalidad, Me.ChEstadoCivil, Me.ChLugarTrabajo, Me.ChTelefonoCasa, Me.ChTelefonoTrabajo})
         Me.LsvLugarTrabajo.GridLines = True
         Me.LsvLugarTrabajo.Location = New System.Drawing.Point(13, 95)
-        Me.LsvLugarTrabajo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LsvLugarTrabajo.Margin = New System.Windows.Forms.Padding(4)
         Me.LsvLugarTrabajo.Name = "LsvLugarTrabajo"
         Me.LsvLugarTrabajo.Size = New System.Drawing.Size(1053, 341)
         Me.LsvLugarTrabajo.TabIndex = 1
@@ -518,7 +503,7 @@ Partial Class FrmSocio
         Me.Panel1.BackColor = System.Drawing.Color.DarkSlateGray
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Location = New System.Drawing.Point(4, 1)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1092, 123)
         Me.Panel1.TabIndex = 13
@@ -528,12 +513,12 @@ Partial Class FrmSocio
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Lucida Bright", 26.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.MintCream
-        Me.Label3.Location = New System.Drawing.Point(345, 44)
+        Me.Label3.Location = New System.Drawing.Point(407, 32)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(315, 51)
         Me.Label3.TabIndex = 7
-        Me.Label3.Text = "Gestion Socio"
+        Me.Label3.Text = "Gestión Socio"
         '
         'FrmSocio
         '
@@ -542,7 +527,7 @@ Partial Class FrmSocio
         Me.ClientSize = New System.Drawing.Size(1102, 643)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FrmSocio"
         Me.Text = "FrmSocio"
         Me.TabControl1.ResumeLayout(False)
@@ -561,7 +546,6 @@ Partial Class FrmSocio
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TpSocio As TabPage
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Button1 As Button
     Friend WithEvents BtnSalir As Button
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents BtnModificar As Button
