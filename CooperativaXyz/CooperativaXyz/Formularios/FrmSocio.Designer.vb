@@ -22,7 +22,8 @@ Partial Class FrmSocio
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.components = New System.ComponentModel.Container()
+        Me.TbMenu = New System.Windows.Forms.TabControl()
         Me.TpSocio = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnSalir = New System.Windows.Forms.Button()
@@ -33,7 +34,7 @@ Partial Class FrmSocio
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TxtTelefonoTrabajo = New System.Windows.Forms.TextBox()
         Me.TxtTelefonoCasa = New System.Windows.Forms.TextBox()
-        Me.TxtIdLugarTrabajo = New System.Windows.Forms.ComboBox()
+        Me.CboIdLugarTrabajo = New System.Windows.Forms.ComboBox()
         Me.CboIdEstadoCivil = New System.Windows.Forms.ComboBox()
         Me.CboIdNacionalidad = New System.Windows.Forms.ComboBox()
         Me.TxtDireccion = New System.Windows.Forms.TextBox()
@@ -54,7 +55,7 @@ Partial Class FrmSocio
         Me.TpListado = New System.Windows.Forms.TabPage()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TxtBuscar = New System.Windows.Forms.TextBox()
-        Me.LsvLugarTrabajo = New System.Windows.Forms.ListView()
+        Me.LsvSocios = New System.Windows.Forms.ListView()
         Me.ChCodSocio = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ChNombre = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ChApellidos = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -67,24 +68,30 @@ Partial Class FrmSocio
         Me.ChTelefonoTrabajo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TabControl1.SuspendLayout()
+        Me.EpMensaje = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.CmsMenuSocio = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TbMenu.SuspendLayout()
         Me.TpSocio.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TpListado.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        CType(Me.EpMensaje, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CmsMenuSocio.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TabControl1
+        'TbMenu
         '
-        Me.TabControl1.Controls.Add(Me.TpSocio)
-        Me.TabControl1.Controls.Add(Me.TpListado)
-        Me.TabControl1.Location = New System.Drawing.Point(4, 132)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1096, 512)
-        Me.TabControl1.TabIndex = 14
+        Me.TbMenu.Controls.Add(Me.TpSocio)
+        Me.TbMenu.Controls.Add(Me.TpListado)
+        Me.TbMenu.Location = New System.Drawing.Point(4, 132)
+        Me.TbMenu.Margin = New System.Windows.Forms.Padding(4)
+        Me.TbMenu.Name = "TbMenu"
+        Me.TbMenu.SelectedIndex = 0
+        Me.TbMenu.Size = New System.Drawing.Size(1096, 512)
+        Me.TbMenu.TabIndex = 14
         '
         'TpSocio
         '
@@ -170,7 +177,7 @@ Partial Class FrmSocio
         Me.Panel2.BackColor = System.Drawing.Color.LightSkyBlue
         Me.Panel2.Controls.Add(Me.TxtTelefonoTrabajo)
         Me.Panel2.Controls.Add(Me.TxtTelefonoCasa)
-        Me.Panel2.Controls.Add(Me.TxtIdLugarTrabajo)
+        Me.Panel2.Controls.Add(Me.CboIdLugarTrabajo)
         Me.Panel2.Controls.Add(Me.CboIdEstadoCivil)
         Me.Panel2.Controls.Add(Me.CboIdNacionalidad)
         Me.Panel2.Controls.Add(Me.TxtDireccion)
@@ -212,14 +219,14 @@ Partial Class FrmSocio
         Me.TxtTelefonoCasa.Size = New System.Drawing.Size(268, 24)
         Me.TxtTelefonoCasa.TabIndex = 23
         '
-        'TxtIdLugarTrabajo
+        'CboIdLugarTrabajo
         '
-        Me.TxtIdLugarTrabajo.FormattingEnabled = True
-        Me.TxtIdLugarTrabajo.Location = New System.Drawing.Point(779, 135)
-        Me.TxtIdLugarTrabajo.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtIdLugarTrabajo.Name = "TxtIdLugarTrabajo"
-        Me.TxtIdLugarTrabajo.Size = New System.Drawing.Size(268, 24)
-        Me.TxtIdLugarTrabajo.TabIndex = 22
+        Me.CboIdLugarTrabajo.FormattingEnabled = True
+        Me.CboIdLugarTrabajo.Location = New System.Drawing.Point(779, 135)
+        Me.CboIdLugarTrabajo.Margin = New System.Windows.Forms.Padding(4)
+        Me.CboIdLugarTrabajo.Name = "CboIdLugarTrabajo"
+        Me.CboIdLugarTrabajo.Size = New System.Drawing.Size(268, 24)
+        Me.CboIdLugarTrabajo.TabIndex = 22
         '
         'CboIdEstadoCivil
         '
@@ -341,7 +348,7 @@ Partial Class FrmSocio
         Me.TxtCodigoSocio.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCodigoSocio.Multiline = True
         Me.TxtCodigoSocio.Name = "TxtCodigoSocio"
-        Me.TxtCodigoSocio.Size = New System.Drawing.Size(117, 26)
+        Me.TxtCodigoSocio.Size = New System.Drawing.Size(269, 26)
         Me.TxtCodigoSocio.TabIndex = 15
         '
         'Label6
@@ -408,7 +415,7 @@ Partial Class FrmSocio
         '
         Me.TpListado.Controls.Add(Me.Label12)
         Me.TpListado.Controls.Add(Me.TxtBuscar)
-        Me.TpListado.Controls.Add(Me.LsvLugarTrabajo)
+        Me.TpListado.Controls.Add(Me.LsvSocios)
         Me.TpListado.Location = New System.Drawing.Point(4, 25)
         Me.TpListado.Margin = New System.Windows.Forms.Padding(4)
         Me.TpListado.Name = "TpListado"
@@ -436,17 +443,18 @@ Partial Class FrmSocio
         Me.TxtBuscar.Size = New System.Drawing.Size(287, 22)
         Me.TxtBuscar.TabIndex = 2
         '
-        'LsvLugarTrabajo
+        'LsvSocios
         '
-        Me.LsvLugarTrabajo.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChCodSocio, Me.ChNombre, Me.ChApellidos, Me.ChRTN, Me.ChDireccion, Me.ChNacionalidad, Me.ChEstadoCivil, Me.ChLugarTrabajo, Me.ChTelefonoCasa, Me.ChTelefonoTrabajo})
-        Me.LsvLugarTrabajo.GridLines = True
-        Me.LsvLugarTrabajo.Location = New System.Drawing.Point(13, 95)
-        Me.LsvLugarTrabajo.Margin = New System.Windows.Forms.Padding(4)
-        Me.LsvLugarTrabajo.Name = "LsvLugarTrabajo"
-        Me.LsvLugarTrabajo.Size = New System.Drawing.Size(1053, 341)
-        Me.LsvLugarTrabajo.TabIndex = 1
-        Me.LsvLugarTrabajo.UseCompatibleStateImageBehavior = False
-        Me.LsvLugarTrabajo.View = System.Windows.Forms.View.Details
+        Me.LsvSocios.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ChCodSocio, Me.ChNombre, Me.ChApellidos, Me.ChRTN, Me.ChDireccion, Me.ChNacionalidad, Me.ChEstadoCivil, Me.ChLugarTrabajo, Me.ChTelefonoCasa, Me.ChTelefonoTrabajo})
+        Me.LsvSocios.ContextMenuStrip = Me.CmsMenuSocio
+        Me.LsvSocios.GridLines = True
+        Me.LsvSocios.Location = New System.Drawing.Point(13, 95)
+        Me.LsvSocios.Margin = New System.Windows.Forms.Padding(4)
+        Me.LsvSocios.Name = "LsvSocios"
+        Me.LsvSocios.Size = New System.Drawing.Size(1053, 341)
+        Me.LsvSocios.TabIndex = 1
+        Me.LsvSocios.UseCompatibleStateImageBehavior = False
+        Me.LsvSocios.View = System.Windows.Forms.View.Details
         '
         'ChCodSocio
         '
@@ -520,17 +528,40 @@ Partial Class FrmSocio
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Gestión Socio"
         '
+        'EpMensaje
+        '
+        Me.EpMensaje.ContainerControl = Me
+        '
+        'CmsMenuSocio
+        '
+        Me.CmsMenuSocio.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.CmsMenuSocio.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CmsMenuSocio.Name = "CmsMenuSocio"
+        Me.CmsMenuSocio.Size = New System.Drawing.Size(133, 52)
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(132, 24)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(210, 24)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
         'FrmSocio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1102, 643)
-        Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.TbMenu)
         Me.Controls.Add(Me.Panel1)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FrmSocio"
         Me.Text = "FrmSocio"
-        Me.TabControl1.ResumeLayout(False)
+        Me.TbMenu.ResumeLayout(False)
         Me.TpSocio.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
@@ -539,11 +570,13 @@ Partial Class FrmSocio
         Me.TpListado.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.EpMensaje, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CmsMenuSocio.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TbMenu As TabControl
     Friend WithEvents TpSocio As TabPage
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents BtnSalir As Button
@@ -554,7 +587,7 @@ Partial Class FrmSocio
     Friend WithEvents Panel2 As Panel
     Friend WithEvents TxtTelefonoTrabajo As TextBox
     Friend WithEvents TxtTelefonoCasa As TextBox
-    Friend WithEvents TxtIdLugarTrabajo As ComboBox
+    Friend WithEvents CboIdLugarTrabajo As ComboBox
     Friend WithEvents CboIdEstadoCivil As ComboBox
     Friend WithEvents CboIdNacionalidad As ComboBox
     Friend WithEvents TxtDireccion As TextBox
@@ -575,7 +608,7 @@ Partial Class FrmSocio
     Friend WithEvents TpListado As TabPage
     Friend WithEvents Label12 As Label
     Friend WithEvents TxtBuscar As TextBox
-    Friend WithEvents LsvLugarTrabajo As ListView
+    Friend WithEvents LsvSocios As ListView
     Friend WithEvents ChCodSocio As ColumnHeader
     Friend WithEvents ChNombre As ColumnHeader
     Friend WithEvents ChApellidos As ColumnHeader
@@ -588,4 +621,8 @@ Partial Class FrmSocio
     Friend WithEvents ChTelefonoTrabajo As ColumnHeader
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label3 As Label
+    Friend WithEvents EpMensaje As ErrorProvider
+    Friend WithEvents CmsMenuSocio As ContextMenuStrip
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
 End Class
