@@ -471,6 +471,7 @@ Public Class FrmSolicitudPrestamo
         LlenarComboEstadoPrestamo()
         LlenarComboFinalidadaPrestamo()
         LlenarComboTipoPrestamo()
+        BtnAvales.Visible = False
     End Sub
 
     Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
@@ -488,6 +489,7 @@ Public Class FrmSolicitudPrestamo
             GuardarSolicitud()
             MostrarSolicitudes()
             Limpiar()
+            BtnAvales.Visible = True
         End If
     End Sub
 
@@ -529,5 +531,17 @@ Public Class FrmSolicitudPrestamo
 
     Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles BtnSalir.Click
         Close()
+    End Sub
+
+    Private Sub BtnSeleccionarSocio_Click(sender As Object, e As EventArgs) Handles BtnSeleccionarSocio.Click
+        FrmSocio.ShowDialog()
+    End Sub
+
+    Private Sub BtnSeleccionarOficial_Click(sender As Object, e As EventArgs) Handles BtnSeleccionarOficial.Click
+        FrmOficialSocio.ShowDialog()
+    End Sub
+
+    Private Sub BtnAvales_Click(sender As Object, e As EventArgs) Handles BtnAvales.Click
+        FrmAvales.ShowDialog()
     End Sub
 End Class

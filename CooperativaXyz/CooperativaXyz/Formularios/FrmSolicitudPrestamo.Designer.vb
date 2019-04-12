@@ -78,6 +78,8 @@ Partial Class FrmSolicitudPrestamo
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.EpMensaje = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.BtnSeleccionarSocio = New System.Windows.Forms.Button()
+        Me.BtnSeleccionarOficial = New System.Windows.Forms.Button()
         Me.TbMenu.SuspendLayout()
         Me.TbDatosSolicitud.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -115,6 +117,8 @@ Partial Class FrmSolicitudPrestamo
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.Panel2.Controls.Add(Me.BtnSeleccionarOficial)
+        Me.Panel2.Controls.Add(Me.BtnSeleccionarSocio)
         Me.Panel2.Controls.Add(Me.DtpFechaSolicitud)
         Me.Panel2.Controls.Add(Me.BtnAvales)
         Me.Panel2.Controls.Add(Me.CboFinalidadPrestamo)
@@ -226,7 +230,7 @@ Partial Class FrmSolicitudPrestamo
         Me.TxtCodigoOficial.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCodigoOficial.Multiline = True
         Me.TxtCodigoOficial.Name = "TxtCodigoOficial"
-        Me.TxtCodigoOficial.Size = New System.Drawing.Size(160, 24)
+        Me.TxtCodigoOficial.Size = New System.Drawing.Size(185, 24)
         Me.TxtCodigoOficial.TabIndex = 26
         '
         'TxtSumaOtorgada
@@ -268,7 +272,7 @@ Partial Class FrmSolicitudPrestamo
         Me.TxtCodSocio.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCodSocio.Multiline = True
         Me.TxtCodSocio.Name = "TxtCodSocio"
-        Me.TxtCodSocio.Size = New System.Drawing.Size(160, 24)
+        Me.TxtCodSocio.Size = New System.Drawing.Size(185, 24)
         Me.TxtCodSocio.TabIndex = 18
         '
         'Label9
@@ -625,6 +629,24 @@ Partial Class FrmSolicitudPrestamo
         '
         Me.EpMensaje.ContainerControl = Me
         '
+        'BtnSeleccionarSocio
+        '
+        Me.BtnSeleccionarSocio.Location = New System.Drawing.Point(431, 61)
+        Me.BtnSeleccionarSocio.Name = "BtnSeleccionarSocio"
+        Me.BtnSeleccionarSocio.Size = New System.Drawing.Size(42, 27)
+        Me.BtnSeleccionarSocio.TabIndex = 36
+        Me.BtnSeleccionarSocio.Text = "..."
+        Me.BtnSeleccionarSocio.UseVisualStyleBackColor = True
+        '
+        'BtnSeleccionarOficial
+        '
+        Me.BtnSeleccionarOficial.Location = New System.Drawing.Point(431, 104)
+        Me.BtnSeleccionarOficial.Name = "BtnSeleccionarOficial"
+        Me.BtnSeleccionarOficial.Size = New System.Drawing.Size(42, 28)
+        Me.BtnSeleccionarOficial.TabIndex = 37
+        Me.BtnSeleccionarOficial.Text = "..."
+        Me.BtnSeleccionarOficial.UseVisualStyleBackColor = True
+        '
         'FrmSolicitudPrestamo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -705,4 +727,6 @@ Partial Class FrmSolicitudPrestamo
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BtnBuscarPorSocio As Button
     Friend WithEvents BtnBuscar As Button
+    Friend WithEvents BtnSeleccionarSocio As Button
+    Friend WithEvents BtnSeleccionarOficial As Button
 End Class

@@ -289,4 +289,9 @@ Public Class FrmOficialSocio
             TxtCodigoOficialCredito.BackColor = Color.White
         End If
     End Sub
+
+    Private Sub BtnSeleccionarOficial_Click(sender As Object, e As EventArgs) Handles BtnSeleccionarOficial.Click
+        FrmSolicitudPrestamo.TxtCodigoOficial.Text = LsvOficiales.FocusedItem.SubItems(0).Text
+        Close()
+    End Sub
 End Class

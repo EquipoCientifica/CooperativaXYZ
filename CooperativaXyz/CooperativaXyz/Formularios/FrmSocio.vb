@@ -432,4 +432,9 @@ Public Class FrmSocio
     Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles BtnSalir.Click
         Close()
     End Sub
+
+    Private Sub Seleccionar_Click(sender As Object, e As EventArgs) Handles Seleccionar.Click
+        FrmSolicitudPrestamo.TxtCodSocio.Text = LsvSocios.FocusedItem.SubItems(0).Text
+        Close()
+    End Sub
 End Class
