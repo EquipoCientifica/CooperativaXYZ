@@ -87,6 +87,12 @@
     <Compile Include="Formularios\FrmAvales.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\FrmBuscarSocio.Designer.vb">
+      <DependentUpon>FrmBuscarSocio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmBuscarSocio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\FrmCuentaSocio.Designer.vb">
       <DependentUpon>FrmCuentaSocio.vb</DependentUpon>
     </Compile>
@@ -166,6 +172,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Formularios\FrmAvales.resx">
       <DependentUpon>FrmAvales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmBuscarSocio.resx">
+      <DependentUpon>FrmBuscarSocio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCuentaSocio.resx">
       <DependentUpon>FrmCuentaSocio.vb</DependentUpon>
