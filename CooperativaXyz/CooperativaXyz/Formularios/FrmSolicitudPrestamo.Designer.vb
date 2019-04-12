@@ -106,7 +106,7 @@ Partial Class FrmSolicitudPrestamo
         Me.TbDatosSolicitud.Controls.Add(Me.GroupBox1)
         Me.TbDatosSolicitud.Location = New System.Drawing.Point(4, 22)
         Me.TbDatosSolicitud.Name = "TbDatosSolicitud"
-        Me.TbDatosSolicitud.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TbDatosSolicitud.Padding = New System.Windows.Forms.Padding(3)
         Me.TbDatosSolicitud.Size = New System.Drawing.Size(822, 318)
         Me.TbDatosSolicitud.TabIndex = 0
         Me.TbDatosSolicitud.Text = "Datos Solicitud"
@@ -146,7 +146,7 @@ Partial Class FrmSolicitudPrestamo
         'BtnSeleccionarOficial
         '
         Me.BtnSeleccionarOficial.Location = New System.Drawing.Point(323, 84)
-        Me.BtnSeleccionarOficial.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnSeleccionarOficial.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSeleccionarOficial.Name = "BtnSeleccionarOficial"
         Me.BtnSeleccionarOficial.Size = New System.Drawing.Size(32, 23)
         Me.BtnSeleccionarOficial.TabIndex = 37
@@ -156,7 +156,7 @@ Partial Class FrmSolicitudPrestamo
         'BtnSeleccionarSocio
         '
         Me.BtnSeleccionarSocio.Location = New System.Drawing.Point(323, 50)
-        Me.BtnSeleccionarSocio.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnSeleccionarSocio.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSeleccionarSocio.Name = "BtnSeleccionarSocio"
         Me.BtnSeleccionarSocio.Size = New System.Drawing.Size(32, 22)
         Me.BtnSeleccionarSocio.TabIndex = 36
@@ -167,7 +167,7 @@ Partial Class FrmSolicitudPrestamo
         '
         Me.DtpFechaSolicitud.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DtpFechaSolicitud.Location = New System.Drawing.Point(179, 127)
-        Me.DtpFechaSolicitud.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DtpFechaSolicitud.Margin = New System.Windows.Forms.Padding(2)
         Me.DtpFechaSolicitud.Name = "DtpFechaSolicitud"
         Me.DtpFechaSolicitud.Size = New System.Drawing.Size(121, 20)
         Me.DtpFechaSolicitud.TabIndex = 35
@@ -177,7 +177,7 @@ Partial Class FrmSolicitudPrestamo
         Me.BtnAvales.BackColor = System.Drawing.Color.Teal
         Me.BtnAvales.Font = New System.Drawing.Font("Lucida Bright", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnAvales.Location = New System.Drawing.Point(599, 172)
-        Me.BtnAvales.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnAvales.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnAvales.Name = "BtnAvales"
         Me.BtnAvales.Size = New System.Drawing.Size(114, 38)
         Me.BtnAvales.TabIndex = 34
@@ -188,7 +188,7 @@ Partial Class FrmSolicitudPrestamo
         '
         Me.CboFinalidadPrestamo.FormattingEnabled = True
         Me.CboFinalidadPrestamo.Location = New System.Drawing.Point(179, 158)
-        Me.CboFinalidadPrestamo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CboFinalidadPrestamo.Margin = New System.Windows.Forms.Padding(2)
         Me.CboFinalidadPrestamo.Name = "CboFinalidadPrestamo"
         Me.CboFinalidadPrestamo.Size = New System.Drawing.Size(121, 21)
         Me.CboFinalidadPrestamo.TabIndex = 33
@@ -197,7 +197,7 @@ Partial Class FrmSolicitudPrestamo
         '
         Me.CboTipoPrestamo.FormattingEnabled = True
         Me.CboTipoPrestamo.Location = New System.Drawing.Point(599, 123)
-        Me.CboTipoPrestamo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CboTipoPrestamo.Margin = New System.Windows.Forms.Padding(2)
         Me.CboTipoPrestamo.Name = "CboTipoPrestamo"
         Me.CboTipoPrestamo.Size = New System.Drawing.Size(128, 21)
         Me.CboTipoPrestamo.TabIndex = 32
@@ -206,7 +206,7 @@ Partial Class FrmSolicitudPrestamo
         '
         Me.CboEstadoPrestamo.FormattingEnabled = True
         Me.CboEstadoPrestamo.Location = New System.Drawing.Point(599, 84)
-        Me.CboEstadoPrestamo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CboEstadoPrestamo.Margin = New System.Windows.Forms.Padding(2)
         Me.CboEstadoPrestamo.Name = "CboEstadoPrestamo"
         Me.CboEstadoPrestamo.Size = New System.Drawing.Size(92, 21)
         Me.CboEstadoPrestamo.TabIndex = 31
@@ -377,7 +377,6 @@ Partial Class FrmSolicitudPrestamo
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.BtnSalir)
         Me.GroupBox1.Controls.Add(Me.BtnCancelar)
         Me.GroupBox1.Controls.Add(Me.BtnModificar)
         Me.GroupBox1.Controls.Add(Me.BtnGuardar)
@@ -391,7 +390,7 @@ Partial Class FrmSolicitudPrestamo
         'BtnSalir
         '
         Me.BtnSalir.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.BtnSalir.Location = New System.Drawing.Point(662, 18)
+        Me.BtnSalir.Location = New System.Drawing.Point(758, 47)
         Me.BtnSalir.Name = "BtnSalir"
         Me.BtnSalir.Size = New System.Drawing.Size(75, 50)
         Me.BtnSalir.TabIndex = 4
@@ -445,7 +444,7 @@ Partial Class FrmSolicitudPrestamo
         Me.TbListadoSolicitudes.Controls.Add(Me.Label5)
         Me.TbListadoSolicitudes.Location = New System.Drawing.Point(4, 22)
         Me.TbListadoSolicitudes.Name = "TbListadoSolicitudes"
-        Me.TbListadoSolicitudes.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TbListadoSolicitudes.Padding = New System.Windows.Forms.Padding(3)
         Me.TbListadoSolicitudes.Size = New System.Drawing.Size(822, 318)
         Me.TbListadoSolicitudes.TabIndex = 1
         Me.TbListadoSolicitudes.Text = "Listado"
@@ -454,7 +453,7 @@ Partial Class FrmSolicitudPrestamo
         'BtnBuscar
         '
         Me.BtnBuscar.Location = New System.Drawing.Point(452, 34)
-        Me.BtnBuscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnBuscar.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnBuscar.Name = "BtnBuscar"
         Me.BtnBuscar.Size = New System.Drawing.Size(56, 19)
         Me.BtnBuscar.TabIndex = 20
@@ -464,7 +463,7 @@ Partial Class FrmSolicitudPrestamo
         'BtnBuscarPorSocio
         '
         Me.BtnBuscarPorSocio.Location = New System.Drawing.Point(452, 34)
-        Me.BtnBuscarPorSocio.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnBuscarPorSocio.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnBuscarPorSocio.Name = "BtnBuscarPorSocio"
         Me.BtnBuscarPorSocio.Size = New System.Drawing.Size(56, 19)
         Me.BtnBuscarPorSocio.TabIndex = 19
@@ -489,7 +488,7 @@ Partial Class FrmSolicitudPrestamo
         '
         Me.RdbBuscarporCodSocio.AutoSize = True
         Me.RdbBuscarporCodSocio.Location = New System.Drawing.Point(534, 20)
-        Me.RdbBuscarporCodSocio.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RdbBuscarporCodSocio.Margin = New System.Windows.Forms.Padding(2)
         Me.RdbBuscarporCodSocio.Name = "RdbBuscarporCodSocio"
         Me.RdbBuscarporCodSocio.Size = New System.Drawing.Size(88, 17)
         Me.RdbBuscarporCodSocio.TabIndex = 16
@@ -501,7 +500,7 @@ Partial Class FrmSolicitudPrestamo
         '
         Me.RdbBuscarporCodOficial.AutoSize = True
         Me.RdbBuscarporCodOficial.Location = New System.Drawing.Point(534, 41)
-        Me.RdbBuscarporCodOficial.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RdbBuscarporCodOficial.Margin = New System.Windows.Forms.Padding(2)
         Me.RdbBuscarporCodOficial.Name = "RdbBuscarporCodOficial"
         Me.RdbBuscarporCodOficial.Size = New System.Drawing.Size(107, 17)
         Me.RdbBuscarporCodOficial.TabIndex = 15
@@ -604,6 +603,7 @@ Partial Class FrmSolicitudPrestamo
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Panel1.Controls.Add(Me.BtnSalir)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Location = New System.Drawing.Point(-3, -1)
         Me.Panel1.Name = "Panel1"

@@ -167,9 +167,9 @@ Public Class FrmOficialSocio
                     .Connection = Cn
 
 
-                    Dim Id As Integer
-                    Id = CInt(LsvOficiales.FocusedItem.SubItems(0).Text)
-                    .Parameters.Add("@CodOficial", SqlDbType.NVarChar, 11).Value = Id
+                    Dim Id As String
+                    Id = LsvOficiales.FocusedItem.SubItems(1).Text
+                    .Parameters.Add("@Nombres", SqlDbType.NVarChar, 50).Value = Id
                     .ExecuteNonQuery()
 
                     MessageBox.Show("Oficail Credito Eliminada Satisfactoriamente", "Cooperativa", MessageBoxButtons.OK, MessageBoxIcon.Information)

@@ -231,7 +231,7 @@ Public Class FrmSocio
                 End With
             End Using
         Catch ex As Exception
-            MessageBox.Show("Error al elimnar el Artista", "CooperativaXyz", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error al elimnar el socio ", "CooperativaXyz", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
             Cn.Close()
         End Try
