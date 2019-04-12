@@ -22,12 +22,14 @@ Partial Class FrmCuentaSocio
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TbListadoCuentaSocio = New System.Windows.Forms.TabControl()
+        Me.components = New System.ComponentModel.Container()
+        Me.TcListadoCuentaSocio = New System.Windows.Forms.TabControl()
         Me.TbCuentaSocio = New System.Windows.Forms.TabPage()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.CboTipoCuenta = New System.Windows.Forms.ComboBox()
+        Me.BtnFiltrar = New System.Windows.Forms.Button()
+        Me.DtpFechaApertura = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TxtTipoCuenta = New System.Windows.Forms.TextBox()
         Me.TxtSaldoActual = New System.Windows.Forms.TextBox()
         Me.TxtCodSocio = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -42,7 +44,7 @@ Partial Class FrmCuentaSocio
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.TbListadoOficiales = New System.Windows.Forms.TabPage()
-        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.LsvCuentaSocio = New System.Windows.Forms.ListView()
         Me.CHNumCuenta = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.CHCodigoSocio = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.CHTipoCuenta = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -52,23 +54,29 @@ Partial Class FrmCuentaSocio
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TbListadoCuentaSocio.SuspendLayout()
+        Me.EpMensaje = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.CmOpciones = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TcListadoCuentaSocio.SuspendLayout()
         Me.TbCuentaSocio.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.TbListadoOficiales.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        CType(Me.EpMensaje, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CmOpciones.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TbListadoCuentaSocio
+        'TcListadoCuentaSocio
         '
-        Me.TbListadoCuentaSocio.Controls.Add(Me.TbCuentaSocio)
-        Me.TbListadoCuentaSocio.Controls.Add(Me.TbListadoOficiales)
-        Me.TbListadoCuentaSocio.Location = New System.Drawing.Point(-11, 118)
-        Me.TbListadoCuentaSocio.Name = "TbListadoCuentaSocio"
-        Me.TbListadoCuentaSocio.SelectedIndex = 0
-        Me.TbListadoCuentaSocio.Size = New System.Drawing.Size(823, 320)
-        Me.TbListadoCuentaSocio.TabIndex = 15
+        Me.TcListadoCuentaSocio.Controls.Add(Me.TbCuentaSocio)
+        Me.TcListadoCuentaSocio.Controls.Add(Me.TbListadoOficiales)
+        Me.TcListadoCuentaSocio.Location = New System.Drawing.Point(-11, 118)
+        Me.TcListadoCuentaSocio.Name = "TcListadoCuentaSocio"
+        Me.TcListadoCuentaSocio.SelectedIndex = 0
+        Me.TcListadoCuentaSocio.Size = New System.Drawing.Size(823, 320)
+        Me.TcListadoCuentaSocio.TabIndex = 15
         '
         'TbCuentaSocio
         '
@@ -85,9 +93,10 @@ Partial Class FrmCuentaSocio
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.Panel2.Controls.Add(Me.DateTimePicker1)
+        Me.Panel2.Controls.Add(Me.CboTipoCuenta)
+        Me.Panel2.Controls.Add(Me.BtnFiltrar)
+        Me.Panel2.Controls.Add(Me.DtpFechaApertura)
         Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Controls.Add(Me.TxtTipoCuenta)
         Me.Panel2.Controls.Add(Me.TxtSaldoActual)
         Me.Panel2.Controls.Add(Me.TxtCodSocio)
         Me.Panel2.Controls.Add(Me.Label7)
@@ -100,13 +109,31 @@ Partial Class FrmCuentaSocio
         Me.Panel2.Size = New System.Drawing.Size(803, 179)
         Me.Panel2.TabIndex = 16
         '
-        'DateTimePicker1
+        'CboTipoCuenta
         '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(529, 54)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(121, 20)
-        Me.DateTimePicker1.TabIndex = 26
+        Me.CboTipoCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboTipoCuenta.FormattingEnabled = True
+        Me.CboTipoCuenta.Location = New System.Drawing.Point(176, 102)
+        Me.CboTipoCuenta.Name = "CboTipoCuenta"
+        Me.CboTipoCuenta.Size = New System.Drawing.Size(185, 26)
+        Me.CboTipoCuenta.TabIndex = 28
+        '
+        'BtnFiltrar
+        '
+        Me.BtnFiltrar.Location = New System.Drawing.Point(327, 54)
+        Me.BtnFiltrar.Name = "BtnFiltrar"
+        Me.BtnFiltrar.Size = New System.Drawing.Size(34, 23)
+        Me.BtnFiltrar.TabIndex = 27
+        Me.BtnFiltrar.Text = "..."
+        Me.BtnFiltrar.UseVisualStyleBackColor = True
+        '
+        'DtpFechaApertura
+        '
+        Me.DtpFechaApertura.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DtpFechaApertura.Location = New System.Drawing.Point(529, 57)
+        Me.DtpFechaApertura.Name = "DtpFechaApertura"
+        Me.DtpFechaApertura.Size = New System.Drawing.Size(121, 20)
+        Me.DtpFechaApertura.TabIndex = 26
         '
         'Label2
         '
@@ -119,31 +146,23 @@ Partial Class FrmCuentaSocio
         Me.Label2.TabIndex = 25
         Me.Label2.Text = "Fecha Apertura"
         '
-        'TxtTipoCuenta
-        '
-        Me.TxtTipoCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtTipoCuenta.Location = New System.Drawing.Point(176, 104)
-        Me.TxtTipoCuenta.Multiline = True
-        Me.TxtTipoCuenta.Name = "TxtTipoCuenta"
-        Me.TxtTipoCuenta.Size = New System.Drawing.Size(154, 20)
-        Me.TxtTipoCuenta.TabIndex = 24
-        '
         'TxtSaldoActual
         '
-        Me.TxtSaldoActual.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtSaldoActual.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtSaldoActual.Location = New System.Drawing.Point(176, 145)
         Me.TxtSaldoActual.Multiline = True
         Me.TxtSaldoActual.Name = "TxtSaldoActual"
-        Me.TxtSaldoActual.Size = New System.Drawing.Size(154, 23)
+        Me.TxtSaldoActual.Size = New System.Drawing.Size(185, 23)
         Me.TxtSaldoActual.TabIndex = 19
         '
         'TxtCodSocio
         '
-        Me.TxtCodSocio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtCodSocio.Enabled = False
+        Me.TxtCodSocio.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCodSocio.Location = New System.Drawing.Point(176, 56)
         Me.TxtCodSocio.Multiline = True
         Me.TxtCodSocio.Name = "TxtCodSocio"
-        Me.TxtCodSocio.Size = New System.Drawing.Size(154, 20)
+        Me.TxtCodSocio.Size = New System.Drawing.Size(155, 20)
         Me.TxtCodSocio.TabIndex = 18
         '
         'Label7
@@ -170,11 +189,12 @@ Partial Class FrmCuentaSocio
         '
         'TxtNumCuenta
         '
-        Me.TxtNumCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtNumCuenta.Enabled = False
+        Me.TxtNumCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtNumCuenta.Location = New System.Drawing.Point(176, 17)
         Me.TxtNumCuenta.Multiline = True
         Me.TxtNumCuenta.Name = "TxtNumCuenta"
-        Me.TxtNumCuenta.Size = New System.Drawing.Size(154, 20)
+        Me.TxtNumCuenta.Size = New System.Drawing.Size(185, 23)
         Me.TxtNumCuenta.TabIndex = 15
         '
         'Label4
@@ -259,7 +279,7 @@ Partial Class FrmCuentaSocio
         '
         'TbListadoOficiales
         '
-        Me.TbListadoOficiales.Controls.Add(Me.ListView1)
+        Me.TbListadoOficiales.Controls.Add(Me.LsvCuentaSocio)
         Me.TbListadoOficiales.Controls.Add(Me.TxtBuscarCuentaSocio)
         Me.TbListadoOficiales.Controls.Add(Me.Label5)
         Me.TbListadoOficiales.Location = New System.Drawing.Point(4, 22)
@@ -270,16 +290,17 @@ Partial Class FrmCuentaSocio
         Me.TbListadoOficiales.Text = "Listado"
         Me.TbListadoOficiales.UseVisualStyleBackColor = True
         '
-        'ListView1
+        'LsvCuentaSocio
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.CHNumCuenta, Me.CHCodigoSocio, Me.CHTipoCuenta, Me.CHSaldoActual, Me.CHFecha})
-        Me.ListView1.GridLines = True
-        Me.ListView1.Location = New System.Drawing.Point(12, 56)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(795, 225)
-        Me.ListView1.TabIndex = 17
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
+        Me.LsvCuentaSocio.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.CHNumCuenta, Me.CHCodigoSocio, Me.CHTipoCuenta, Me.CHSaldoActual, Me.CHFecha})
+        Me.LsvCuentaSocio.FullRowSelect = True
+        Me.LsvCuentaSocio.GridLines = True
+        Me.LsvCuentaSocio.Location = New System.Drawing.Point(12, 56)
+        Me.LsvCuentaSocio.Name = "LsvCuentaSocio"
+        Me.LsvCuentaSocio.Size = New System.Drawing.Size(795, 225)
+        Me.LsvCuentaSocio.TabIndex = 17
+        Me.LsvCuentaSocio.UseCompatibleStateImageBehavior = False
+        Me.LsvCuentaSocio.View = System.Windows.Forms.View.Details
         '
         'CHNumCuenta
         '
@@ -343,16 +364,40 @@ Partial Class FrmCuentaSocio
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Cuenta Socio"
         '
+        'EpMensaje
+        '
+        Me.EpMensaje.ContainerControl = Me
+        '
+        'CmOpciones
+        '
+        Me.CmOpciones.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CmOpciones.Name = "CmOpciones"
+        Me.CmOpciones.Size = New System.Drawing.Size(118, 48)
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
         'FrmCuentaSocio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.TbListadoCuentaSocio)
+        Me.ContextMenuStrip = Me.CmOpciones
+        Me.Controls.Add(Me.TcListadoCuentaSocio)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FrmCuentaSocio"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmCuentaSocio"
-        Me.TbListadoCuentaSocio.ResumeLayout(False)
+        Me.TcListadoCuentaSocio.ResumeLayout(False)
         Me.TbCuentaSocio.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
@@ -361,16 +406,17 @@ Partial Class FrmCuentaSocio
         Me.TbListadoOficiales.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.EpMensaje, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CmOpciones.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents TbListadoCuentaSocio As TabControl
+    Friend WithEvents TcListadoCuentaSocio As TabControl
     Friend WithEvents TbCuentaSocio As TabPage
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents DtpFechaApertura As DateTimePicker
     Friend WithEvents Label2 As Label
-    Friend WithEvents TxtTipoCuenta As TextBox
     Friend WithEvents TxtSaldoActual As TextBox
     Friend WithEvents TxtCodSocio As TextBox
     Friend WithEvents Label7 As Label
@@ -385,7 +431,7 @@ Partial Class FrmCuentaSocio
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents BtnNuevo As Button
     Friend WithEvents TbListadoOficiales As TabPage
-    Friend WithEvents ListView1 As ListView
+    Friend WithEvents LsvCuentaSocio As ListView
     Friend WithEvents CHNumCuenta As ColumnHeader
     Friend WithEvents CHCodigoSocio As ColumnHeader
     Friend WithEvents CHTipoCuenta As ColumnHeader
@@ -395,4 +441,10 @@ Partial Class FrmCuentaSocio
     Friend WithEvents Label5 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label3 As Label
+    Friend WithEvents CboTipoCuenta As ComboBox
+    Friend WithEvents BtnFiltrar As Button
+    Friend WithEvents EpMensaje As ErrorProvider
+    Friend WithEvents CmOpciones As ContextMenuStrip
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
 End Class
