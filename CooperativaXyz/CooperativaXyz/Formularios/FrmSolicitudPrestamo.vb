@@ -514,6 +514,8 @@ Public Class FrmSolicitudPrestamo
             HabilitarBotones(True, False, False, True, True)
             ActualizarSolicitud()
             MostrarSolicitudes()
+            BtnAvales.Visible = True
+
 
             TbMenu.SelectedIndex = 1
         End If
@@ -542,6 +544,12 @@ Public Class FrmSolicitudPrestamo
     End Sub
 
     Private Sub BtnAvales_Click(sender As Object, e As EventArgs) Handles BtnAvales.Click
+
+        FrmAvales.TxtNumSolicitus.Text = LsvSolicitudes.FocusedItem.SubItems(0).Text
+        FrmAvales.TxtMostrarPrestamo.Text = LsvSolicitudes.FocusedItem.SubItems(2).Text
+
         FrmAvales.ShowDialog()
+
+
     End Sub
 End Class

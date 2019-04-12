@@ -435,6 +435,7 @@ Public Class FrmSocio
 
     Private Sub Seleccionar_Click(sender As Object, e As EventArgs) Handles Seleccionar.Click
         FrmSolicitudPrestamo.TxtCodSocio.Text = LsvSocios.FocusedItem.SubItems(0).Text
+        FrmAvales.TxtAval.Text = LsvSocios.FocusedItem.SubItems(0).Text
         Close()
     End Sub
 End Class
